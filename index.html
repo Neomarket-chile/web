@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Neomarket — Agencia de Marketing Digital en Chile. Creamos, subimos y monitoreamos campañas en Meta Ads que hacen crecer tu negocio."/>
+  <title>NEOMARKET | Agencia de Performance & Meta Ads Chile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("DPGW40twES7yVFaGt");</script>
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg:       #FFFFFF;
+  --text:     #0E0D0C;
+  --accent:   #0E0D0C;
+  --subtle:   #1C1A18;
+  --gray-dk:  #6B6660;
+  --gray-lt:  #9A9590;
+  --off-wh:   #FDF8F7;
+  --border:   #0E0D0C;
+  --serif:    'Cormorant Garamond', serif;
+  --sans:     'Outfit', sans-serif;
+  --mono:     'JetBrains Mono', monospace;
+  --bw:       2px;
+  --gm:       64px;
+  --sp:       80px;
+  --tf:       0.2s cubic-bezier(.25,1,.5,1);
+  --tm:       0.4s cubic-bezier(.25,1,.5,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;}
+body{min-height:100vh;line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em;}
+p{font-family:var(--sans);font-weight:300;font-size:1.1rem;color:var(--gray-dk);}
+a{color:inherit;text-decoration:none;}
+.mono-lbl{font-family:var(--mono);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-lt);}
+.tag-caps{font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text);margin-bottom:1rem;display:inline-block;border-bottom:1px solid var(--border);padding-bottom:4px;}
+.sec-div{width:100%;height:var(--bw);background:var(--border);}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;text-decoration:none;padding:.8rem 1.8rem;border-radius:0;border:var(--bw) solid var(--border);font-size:.95rem;cursor:pointer;position:relative;transition:var(--tf);}
+.btn-primary{background:var(--accent);color:var(--bg);}
+.btn-primary:hover{background:var(--bg);color:var(--accent);transform:translate(-4px,-4px);box-shadow:4px 4px 0 var(--accent);}
+.btn-secondary{background:transparent;color:var(--text);}
+.btn-secondary:hover{background:var(--accent);color:var(--bg);transform:translate(-4px,-4px);box-shadow:4px 4px 0 var(--accent);}
+.btn-accent{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:.8rem;padding:.6rem 1.2rem;border:1px solid var(--border);letter-spacing:.05em;text-transform:uppercase;}
+.btn-accent:hover{background:var(--accent);color:var(--bg);}
+.btn-sm{padding:.5rem 1.2rem;font-size:.85rem;}
+.main-header{position:sticky;top:0;width:100%;height:70px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:var(--bw) solid var(--border);z-index:100;}
+.header-container{max-width:1400px;height:100%;margin:0 auto;padding:0 var(--gm);display:flex;align-items:center;justify-content:space-between;}
+.logo-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);}
+.brand-name{font-family:var(--sans);font-weight:700;font-size:1.2rem;letter-spacing:.05em;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-item{font-family:var(--sans);font-weight:400;font-size:.95rem;text-decoration:none;color:var(--gray-dk);transition:var(--tf);}
+.nav-item:hover{color:var(--text);}
+.btn-nav{padding:.4rem 1.2rem;font-size:.85rem;}
+.mini-scene{perspective:150px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;}
+.mini-cube{width:26px;height:26px;position:relative;transform-style:preserve-3d;animation:spinMini 8s linear infinite;}
+@keyframes spinMini{0%{transform:rotateY(0deg) rotateX(10deg);}100%{transform:rotateY(360deg) rotateX(10deg);}}
+.mf{position:absolute;width:26px;height:26px;border-radius:5px;background:var(--text);display:flex;align-items:center;justify-content:center;}
+.mf.mfront{transform:translateZ(4px);}
+.mf.mback{transform:rotateY(180deg) translateZ(4px);}
+.mf.mright,.mf.mleft,.mf.mtop,.mf.mbottom{display:none;}
+.logo-n{color:var(--bg);font-family:var(--sans);font-weight:700;font-size:14px;line-height:1;}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110;}
+.hamburger{display:block;width:24px;height:2px;background:var(--text);position:relative;transition:var(--tf);}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:24px;height:2px;background:var(--text);transition:var(--tf);}
+.hamburger::before{top:-6px;left:0;}
+.hamburger::after{top:6px;left:0;}
+.menu-toggle.active .hamburger{background:transparent;}
+.menu-toggle.active .hamburger::before{transform:rotate(45deg);top:0;}
+.menu-toggle.active .hamburger::after{transform:rotate(-45deg);top:0;}
+.mobile-menu-overlay{position:fixed;top:70px;left:0;width:100vw;height:calc(100vh - 70px);background:var(--bg);z-index:95;display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:var(--tm);border-bottom:var(--bw) solid var(--border);}
+.mobile-menu-overlay.active{transform:translateX(0);}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;align-items:center;gap:32px;}
+.mobile-nav-item{font-family:var(--serif);font-size:2.2rem;font-weight:700;text-decoration:none;color:var(--text);transition:var(--tf);}
+.btn-mobile-nav{font-family:var(--sans);font-size:1.1rem;padding:.8rem 2.4rem;}
+.hero-section{position:relative;padding:var(--sp) 0;background:var(--bg);}
+.hero-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;}
+.hero-title{font-size:4.8rem;line-height:1.05;margin-bottom:24px;}
+.hero-title span{font-family:var(--serif);font-style:italic;font-weight:300;}
+.hero-subtitle{font-size:1.25rem;margin-bottom:40px;max-width:600px;}
+.hero-ctas{display:flex;gap:16px;}
+.hero-visual-block{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;}
+.showcase-3d-wrapper{perspective:1200px;width:320px;height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+.logo-3d-large{width:220px;height:220px;position:relative;transform-style:preserve-3d;animation:rotateLarge 18s linear infinite;cursor:pointer;}
+@keyframes rotateLarge{0%{transform:rotateY(0deg) rotateX(12deg);}100%{transform:rotateY(360deg) rotateX(12deg);}}
+.logo-3d-large .lface{position:absolute;width:220px;height:220px;border-radius:22px;background:var(--text);display:flex;align-items:center;justify-content:center;}
+.logo-3d-large .lface.lfront{transform:translateZ(6px);}
+.logo-3d-large .lface.lback{transform:rotateY(180deg) translateZ(6px);}
+.logo-3d-large .lface.lright,.logo-3d-large .lface.lleft,.logo-3d-large .lface.ltop,.logo-3d-large .lface.lbottom{display:none;}
+.logo-svg-main{width:130px;height:130px;}
+.hero-logo-shadow{width:140px;height:16px;margin:12px auto 0;background:radial-gradient(ellipse at 50% 40%,rgba(14,13,12,.18) 0%,rgba(14,13,12,.07) 40%,transparent 75%);border-radius:50% 50% 48% 52%/60% 60% 40% 40%;filter:blur(5px);animation:shadowSync 18s linear infinite;}
+@keyframes shadowSync{0%,100%{width:140px;opacity:.9;transform:scaleX(1);}25%{width:80px;opacity:.45;transform:scaleX(.58);}50%{width:140px;opacity:.9;transform:scaleX(1);}75%{width:80px;opacity:.45;transform:scaleX(.58);}}
+.visual-caption{margin-top:16px;}
+.section-presentation{padding:var(--sp) 0;}
+.presentation-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.presentation-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.section-title{font-size:3.2rem;margin-bottom:24px;}
+.body-text{margin-bottom:24px;}
+.body-text.sec-text{color:var(--gray-dk);font-size:1rem;}
+.presentation-stats{display:grid;grid-template-columns:1fr;gap:32px;}
+.stat-card{border:var(--bw) solid var(--border);padding:24px;background:var(--bg);transition:var(--tf);}
+.stat-card:hover{transform:translate(-4px,-4px);box-shadow:4px 4px 0 var(--text);}
+.stat-num{font-family:var(--serif);font-size:3.5rem;font-weight:700;line-height:1;margin-bottom:8px;}
+.stat-label{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--text);text-transform:uppercase;letter-spacing:.05em;}
+.stat-details{font-family:var(--mono);font-size:.75rem;color:var(--gray-lt);margin-top:4px;}
+.section-services{padding:var(--sp) 0;}
+.services-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.services-header{max-width:700px;margin-bottom:60px;}
+.services-desc{margin-top:16px;}
+.campaign-simulator{border:var(--bw) solid var(--border);background:var(--bg);display:flex;flex-direction:column;}
+.simulator-tabs{display:flex;border-bottom:var(--bw) solid var(--border);background:var(--bg);}
+.tab-btn{flex:1;background:none;border:none;border-right:var(--bw) solid var(--border);padding:18px 24px;font-family:var(--sans);font-weight:600;font-size:1rem;text-align:left;cursor:pointer;display:inline-flex;align-items:center;gap:10px;color:var(--gray-dk);transition:var(--tf);}
+.tab-btn:last-child{border-right:none;}
+.tab-btn:hover{color:var(--text);background:var(--off-wh);}
+.tab-btn.active{color:var(--text);background:var(--bg);}
+.tab-dot{width:8px;height:8px;border:1px solid var(--border);background:transparent;display:inline-block;transition:var(--tf);}
+.tab-btn.active .tab-dot{background:var(--text);}
+.simulator-viewport{padding:48px;position:relative;}
+.campaign-pane{display:none;}
+.campaign-pane.active{display:block;animation:fadeInUp .4s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.pane-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;}
+.pane-meta{font-family:var(--mono);font-size:.8rem;color:var(--gray-lt);margin-bottom:12px;}
+.pane-details h3{font-size:2.5rem;margin-bottom:16px;}
+.pane-details p{margin-bottom:32px;}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.metric-box{border:1px solid var(--border);padding:16px;background:var(--off-wh);}
+.m-val{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text);line-height:1.2;}
+.m-lbl{display:block;font-family:var(--sans);font-size:.75rem;color:var(--gray-dk);margin-top:4px;text-transform:uppercase;}
+.pane-visual{background:var(--off-wh);border:1px solid var(--border);padding:32px;min-height:380px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.interactive-prompt{margin-top:24px;text-align:center;z-index:2;}
+.lead-flow-wrapper{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;}
+.flow-step{flex:0 0 100px;display:flex;flex-direction:column;align-items:center;opacity:.35;transition:var(--tm);}
+.flow-step.active{opacity:1;}
+.flow-connector{font-size:1.5rem;color:var(--gray-lt);transition:var(--tm);}
+.flow-connector.active{color:var(--text);}
+.flow-label{font-family:var(--mono);font-size:.65rem;color:var(--text);margin-top:12px;text-align:center;text-transform:uppercase;}
+.phone-frame{width:90px;height:150px;border:var(--bw) solid var(--border);border-radius:12px;background:var(--bg);overflow:hidden;position:relative;padding:4px;}
+.phone-screen{width:100%;height:100%;background:#fafafa;border-radius:8px;overflow:hidden;}
+.insta-post{display:flex;flex-direction:column;height:100%;justify-content:space-between;font-family:var(--sans);}
+.insta-header{display:flex;align-items:center;gap:4px;padding:4px;border-bottom:1px solid #eee;}
+.insta-avatar{width:10px;height:10px;border-radius:50%;background:var(--text);}
+.insta-username{font-size:6px;font-weight:700;}
+.insta-img{height:70px;background:var(--text);display:flex;align-items:center;justify-content:center;padding:6px;}
+.insta-img-placeholder{color:var(--bg);text-align:center;font-size:6px;display:flex;flex-direction:column;}
+.insta-img-placeholder small{font-size:4px;color:var(--gray-lt);}
+.insta-action{background:var(--text);color:var(--bg);display:flex;justify-content:space-between;align-items:center;padding:4px 6px;font-size:6px;}
+.form-screen{background:var(--bg);padding:6px;display:flex;flex-direction:column;justify-content:space-between;}
+.form-header{display:flex;align-items:center;gap:4px;border-bottom:1px solid #eee;padding-bottom:4px;}
+.form-logo{width:12px;height:12px;background:var(--text);color:var(--bg);font-weight:700;font-size:8px;display:flex;align-items:center;justify-content:center;border-radius:2px;}
+.form-header h6{font-size:6px;font-family:var(--sans);}
+.mock-fb-form{display:flex;flex-direction:column;gap:4px;}
+.mock-input{display:flex;flex-direction:column;}
+.mock-input label{font-size:4px;color:var(--gray-dk);}
+.mock-input input{font-size:6px;border:1px solid #ccc;padding:2px;background:#f9f9f9;border-radius:1px;}
+.mock-btn-submit{background:var(--text);color:var(--bg);border:none;font-size:5px;padding:3px;cursor:pointer;font-weight:bold;}
+.crm-card{width:100px;border:var(--bw) solid var(--border);background:var(--bg);padding:8px;font-family:var(--mono);}
+.crm-header{font-size:6px;color:var(--gray-lt);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:4px;}
+.crm-entry{font-size:6px;color:var(--text);padding:3px 0;border-bottom:1px solid #eee;}
+.crm-entry strong{color:var(--text);}
+.crm-entry span{color:var(--gray-dk);}
+.crm-status{margin-top:4px;font-size:5px;color:var(--gray-lt);text-align:right;}
+.sales-flow-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.sales-ad-mock{border:var(--bw) solid var(--border);background:var(--bg);overflow:hidden;}
+.sales-ad-img{height:120px;background:var(--text);display:flex;align-items:center;justify-content:center;padding:16px;}
+.sales-ad-img-inner{color:var(--bg);text-align:center;}
+.sales-ad-img-inner .big-price{font-family:var(--serif);font-size:2rem;font-weight:700;display:block;}
+.sales-ad-img-inner small{font-size:.7rem;display:block;color:var(--gray-lt);}
+.ad-meta-bar{padding:8px 12px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eee;font-size:.75rem;}
+.ad-buy-mock{background:var(--text);color:var(--bg);border:none;padding:6px 12px;font-size:.75rem;cursor:pointer;font-family:var(--sans);width:100%;margin-top:8px;}
+.sales-stats-mock{border:1px solid var(--border);background:var(--bg);padding:16px;font-family:var(--mono);font-size:.75rem;}
+.stats-panel-header{font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:8px;font-size:.7rem;}
+.stats-item{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0f0f0;}
+.stats-val{font-weight:700;color:var(--text);}
+.highlight-roas{background:var(--text);color:var(--bg);padding:6px 4px;margin-top:4px;}
+.highlight-roas .stats-val{color:var(--bg);}
+.traffic-flow-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.chile-map-container{position:relative;height:320px;border:1px solid var(--border);background:var(--off-wh);overflow:hidden;}
+.map-bg{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(14,13,12,.04) 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(14,13,12,.04) 20px);}
+.pin{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--text);transform:translate(-50%,-50%);}
+.pin::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--text);opacity:.4;}
+.pin.santiago{left:47%;top:45%;}
+.pin.valparaiso{left:44%;top:40%;}
+.pin.concepcion{left:48%;top:60%;}
+.traffic-particle{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--text);pointer-events:none;transition:opacity .4s ease;}
+.traffic-metrics-panel{display:flex;flex-direction:column;gap:12px;}
+.metric-row-inline{font-family:var(--mono);font-size:.75rem;color:var(--gray-dk);padding:10px 12px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.metric-row-inline strong{color:var(--text);}
+.section-video{padding:var(--sp) 0;}
+.video-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.video-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+.custom-video-frame{border:var(--bw) solid var(--border);position:relative;overflow:hidden;aspect-ratio:16/9;background:#1C1A18;cursor:pointer;}
+.video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:2;cursor:pointer;transition:var(--tf);}
+.video-overlay:hover{background:rgba(0,0,0,.15);}
+.video-thumbnail-bg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.brand-watermark{font-family:var(--sans);font-weight:700;font-size:1.5rem;letter-spacing:.2em;color:rgba(255,255,255,.12);}
+.video-tagline{font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:.15em;text-transform:uppercase;}
+.play-btn{width:72px;height:72px;border:1.5px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:3;transition:var(--tf);}
+.play-btn:hover,.video-overlay:hover .play-btn{border-color:#fff;background:#fff;}
+.play-icon{width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:22px solid rgba(255,255,255,.6);margin-left:4px;transition:var(--tf);}
+.video-overlay:hover .play-icon{border-left-color:#0E0D0C;}
+.mock-video-canvas-container{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.office-mockup{width:90%;display:flex;flex-direction:column;gap:12px;}
+.timeline-bar{height:3px;background:rgba(255,255,255,.1);}
+.timeline-progress{width:0%;height:100%;background:var(--bg);transition:width .1s linear;}
+.dashboard-graph-wrapper{width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.office-graph{width:100%;max-height:140px;}
+.office-graph path{stroke:var(--bg);}
+.office-graph circle{fill:var(--bg);}
+.office-graph text{fill:var(--bg);}
+.office-overlay-info{font-family:var(--mono);font-size:.75rem;color:var(--gray-lt);display:flex;justify-content:space-between;width:100%;}
+.section-contact{padding:var(--sp) 0;}
+.contact-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-details-block{margin-top:48px;display:flex;flex-direction:column;gap:24px;}
+.contact-detail-item{display:flex;flex-direction:column;}
+.detail-label{font-family:var(--mono);font-size:.8rem;color:var(--gray-lt);text-transform:uppercase;margin-bottom:4px;}
+.detail-val{font-size:1.2rem;font-weight:500;color:var(--text);transition:var(--tf);}
+a.detail-val:hover{color:var(--gray-dk);}
+.form-card-container{border:var(--bw) solid var(--border);padding:40px;background:var(--bg);}
+.form-title{font-size:2.2rem;margin-bottom:32px;}
+.main-contact-form{display:flex;flex-direction:column;gap:28px;}
+.form-group{position:relative;width:100%;}
+.form-group input,.form-group textarea{width:100%;padding:8px 0;font-family:var(--sans);font-size:1rem;border:none;border-bottom:var(--bw) solid var(--border);background:transparent;color:var(--text);outline:none;transition:border-color var(--tf);}
+.form-group textarea{resize:none;}
+.form-group label{position:absolute;top:8px;left:0;font-family:var(--sans);font-size:1rem;color:var(--gray-dk);pointer-events:none;transition:var(--tf);}
+.form-group input:focus~label,.form-group input:not(:placeholder-shown)~label,.form-group textarea:focus~label,.form-group textarea:not(:placeholder-shown)~label{top:-16px;font-size:.75rem;font-family:var(--mono);text-transform:uppercase;color:var(--text);}
+.form-group input:focus,.form-group textarea:focus{border-bottom-color:var(--gray-lt);}
+.btn-submit-form{width:100%;margin-top:12px;}
+.btn-spinner{display:none;width:16px;height:16px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;margin-left:10px;animation:spin .8s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.form-feedback{font-family:var(--mono);font-size:.8rem;margin-top:12px;display:none;}
+.form-feedback.success{display:block;color:#2b7a3e;}
+.form-feedback.error{display:block;color:#c62828;}
+.main-footer{background:var(--bg);border-top:var(--bw) solid var(--border);padding:60px 0 40px;}
+.footer-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.footer-top-row{display:flex;justify-content:space-between;margin-bottom:60px;gap:40px;}
+.footer-brand{max-width:400px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;}
+.footer-brand-name{font-family:var(--sans);font-weight:700;font-size:1.2rem;letter-spacing:.05em;display:inline-block;}
+.footer-brand-tag{font-size:.95rem;margin-top:8px;}
+.footer-nav-columns{display:flex;gap:80px;}
+.footer-col h4{font-family:var(--mono);font-size:.8rem;text-transform:uppercase;color:var(--gray-lt);margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-family:var(--sans);font-size:.95rem;color:var(--gray-dk);text-decoration:none;transition:var(--tf);}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(14,13,12,.1);padding-top:24px;font-size:.85rem;color:var(--gray-dk);}
+.footer-tagline{font-family:var(--mono);font-size:.75rem;}
+.js-fade{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.js-fade.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){
+  :root{--gm:32px;}
+  .hero-container{grid-template-columns:1fr;gap:48px;}
+  .hero-visual-block{order:-1;}
+  .presentation-grid,.contact-grid,.video-grid{grid-template-columns:1fr;gap:48px;}
+  .pane-grid{grid-template-columns:1fr;gap:32px;}
+  .pane-visual{order:-1;min-height:auto;}
+}
+@media(max-width:768px){
+  :root{--gm:20px;--sp:60px;}
+  .main-nav .nav-links{display:none;}
+  .menu-toggle{display:block;}
+  .hero-title{font-size:3.2rem;}
+  .section-title{font-size:2.4rem;}
+  .simulator-viewport{padding:20px;}
+  .metric-grid{grid-template-columns:1fr;}
+  .lead-flow-wrapper{flex-direction:column;gap:16px;}
+  .flow-connector{transform:rotate(90deg);}
+  .sales-flow-wrapper{grid-template-columns:1fr;}
+  .traffic-flow-wrapper{grid-template-columns:1fr;}
+  .form-card-container{padding:24px;}
+  .footer-top-row{flex-direction:column;gap:32px;}
+  .footer-nav-columns{gap:48px;}
+  .footer-bottom-row{flex-direction:column;align-items:flex-start;gap:12px;}
+}
+</style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+    <a href="#" class="logo-link" id="logo-nav">
+      <div class="mini-scene">
+        <div class="mini-cube">
+          <div class="mf mfront"><span class="logo-n">N</span></div>
+          <div class="mf mback"><span class="logo-n">N</span></div>
+        </div>
+      </div>
+      <span class="brand-name">NEOMARKET</span>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="#presentacion" class="nav-item">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-item">Meta Ads</a></li>
+        <li><a href="#work" class="nav-item">Cómo trabajamos</a></li>
+        <li><a href="#contacto" class="btn btn-nav">Escríbenos</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Abrir menú"><span class="hamburger"></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay">
+  <ul class="mobile-nav-links">
+    <li><a href="#presentacion" class="mobile-nav-item">Nosotros</a></li>
+    <li><a href="#servicios" class="mobile-nav-item">Meta Ads</a></li>
+    <li><a href="#work" class="mobile-nav-item">Cómo trabajamos</a></li>
+    <li><a href="#contacto" class="mobile-nav-item btn btn-mobile-nav">Escríbenos</a></li>
+  </ul>
+</div>
+
+<main>
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-text-block">
+      <div class="tag-caps">Monitorea & Escala / Chile</div>
+      <h1 class="hero-title">Hacemos que tus campañas de Meta Ads <span>crezcan de verdad</span>.</h1>
+      <p class="hero-subtitle">Diseñamos estrategias de marketing digital de alto impacto para negocios chilenos. Sin números e ideas falsas — enfocados 100% en hacer crecer tu negocio de manera online.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-primary">Iniciar Auditoría</a>
+        <a href="#servicios" class="btn btn-secondary">Ver Campañas</a>
+      </div>
+    </div>
+    <div class="hero-visual-block">
+      <div class="showcase-3d-wrapper">
+        <div class="logo-3d-large" id="interactive-logo-3d">
+          <div class="lface lfront">
+            <svg viewBox="0 0 100 100" class="logo-svg-main" fill="none">
+              <path d="M22 78L22 22L78 78L78 22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="lface lback">
+            <svg viewBox="0 0 100 100" class="logo-svg-main" fill="none">
+              <path d="M22 78L22 22L78 78L78 22" stroke="rgba(255,255,255,0.12)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-logo-shadow"></div>
+      </div>
+      <div class="visual-caption"></div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="presentacion" class="section-presentation js-fade">
+  <div class="presentation-container">
+    <div class="presentation-grid">
+      <div class="presentation-info">
+        <div class="tag-caps">Quiénes Somos</div>
+        <h2 class="section-title">La agencia que no le teme a el mercado online.</h2>
+        <p class="body-text">En Neomarket no vendemos campañas sin resultados ni futuro. Ayudamos a negocios que no encuentran la forma de hacer crecer su publicidad — o simplemente no la hacen. Nos especializamos en crear, subir y monitorear campañas en Meta Ads que hacen crecer tu negocio de forma medible y constante.</p>
+        <p class="body-text sec-text">Entendemos a la audiencia local, las dinámicas de los chilenos y cómo conectar tu marca con las personas que ya están buscando lo que tú ofreces. No configuramos y olvidamos — seguimos los números hasta que nos dan resultados.</p>
+      </div>
+      <div class="presentation-stats">
+        <div class="stat-card">
+          <div class="stat-num">Meta Ads</div>
+          <div class="stat-label">Plataforma Principal</div>
+          <div class="stat-details">Facebook & Instagram como canal de crecimiento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Monitoreo Activo</div>
+          <div class="stat-details">Seguimiento diario de cada campaña activa</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">+ROAS</div>
+          <div class="stat-label">Objetivo Central</div>
+          <div class="stat-details">Retorno real sobre inversión publicitaria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="servicios" class="section-services js-fade">
+  <div class="services-container">
+    <div class="services-header">
+      <div class="tag-caps">Nuestra Especialidad</div>
+      <h2 class="section-title">Estrategias de Meta Ads de Alto Rendimiento</h2>
+      <p class="services-desc">No todas las campañas se configuran igual. Dependiendo de tu modelo de negocio, diseñamos arquitecturas específicas para cada objetivo comercial.</p>
+    </div>
+    <div class="campaign-simulator">
+      <div class="simulator-tabs">
+        <button class="tab-btn active" data-campaign="leads"><span class="tab-dot"></span> Captación de Leads</button>
+        <button class="tab-btn" data-campaign="ventas"><span class="tab-dot"></span> Ventas / Conversión</button>
+        <button class="tab-btn" data-campaign="trafico"><span class="tab-dot"></span> Tráfico Calificado</button>
+      </div>
+      <div class="simulator-viewport">
+        <div class="campaign-pane active" id="pane-leads">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Generación de Clientes Potenciales]</div>
+              <h3>Llena la agenda de tu equipo comercial.</h3>
+              <p>Diseñamos formularios instantáneos integrados en Instagram y Facebook, optimizados para adquirir datos reales de usuarios y sincronizados en tiempo real con tu proceso de ventas.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">20.150.984</span><span class="m-lbl">Personas en Chile</span></div>
+                <div class="metric-box"><span class="m-val">74,7%</span><span class="m-lbl">Usa Redes</span></div>
+                <div class="metric-box"><span class="m-val">15.052.785</span><span class="m-lbl">Posibles Leads</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Quiero Leads</a>
+            </div>
+            <div class="pane-visual">
+              <div class="lead-flow-wrapper">
+                <div class="flow-step step-ad active" id="lead-ad">
+                  <div class="phone-frame"><div class="phone-screen"><div class="insta-post">
+                    <div class="insta-header"><div class="insta-avatar"></div><div class="insta-username">neomarket</div></div>
+                    <div class="insta-img"><div class="insta-img-placeholder"><span>¿Tu negocio no escala?</span><small>Meta Ads que facturan</small></div></div>
+                    <div class="insta-action"><span>Registrarte</span><span>→</span></div>
+                  </div></div></div>
+                  <div class="flow-label">1. Anuncio</div>
+                </div>
+                <div class="flow-connector" id="conn-1">→</div>
+                <div class="flow-step step-form" id="lead-form">
+                  <div class="phone-frame"><div class="phone-screen form-screen">
+                    <div class="form-header"><div class="form-logo">N</div><h6>NEOMARKET</h6></div>
+                    <form class="mock-fb-form" onsubmit="return false;">
+                      <div class="mock-input"><label>Nombre</label><input type="text" value="María González" readonly></div>
+                      <div class="mock-input"><label>Teléfono</label><input type="text" value="+56 9 8765 4321" readonly></div>
+                      <div class="mock-input"><label>Email</label><input type="text" value="maria@empresa.cl" readonly></div>
+                      <button class="mock-btn-submit">Enviar</button>
+                    </form>
+                  </div></div>
+                  <div class="flow-label">2. Formulario</div>
+                </div>
+                <div class="flow-connector" id="conn-2">→</div>
+                <div class="flow-step step-success" id="lead-crm">
+                  <div class="crm-card">
+                    <div class="crm-header">LEAD RECIBIDO</div>
+                    <div class="crm-entry"><strong>Nombre:</strong><br><span>María González</span></div>
+                    <div class="crm-entry"><strong>Tel:</strong><br><span>+56 9 8765 4321</span></div>
+                    <div class="crm-entry"><strong>Email:</strong><br><span>maria@empresa.cl</span></div>
+                    <div class="crm-status">✓ Sincronizado</div>
+                  </div>
+                  <div class="flow-label">3. Entregado</div>
+                </div>
+              </div>
+              <div class="interactive-prompt">
+                <button class="btn btn-accent btn-trigger-flow" data-flow="leads">Simular Flujo de Lead</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-pane" id="pane-ventas">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Ventas y Conversión]</div>
+              <h3>Convierte audiencias en clientes reales.</h3>
+              <p>Optimizamos cada peso de tu inversión para que quienes ven tu anuncio actúen: visiten tu local, compren online o se contacten directamente contigo.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">+ROAS</span><span class="m-lbl">Sube tu ROAS</span></div>
+                <div class="metric-box"><span class="m-val">$CLP</span><span class="m-lbl">Gana en CLP</span></div>
+                <div class="metric-box"><span class="m-val">+Ventas</span><span class="m-lbl">vs. Sin Optimizar</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Quiero Ventas</a>
+            </div>
+            <div class="pane-visual">
+              <div class="sales-flow-wrapper">
+                <div class="sales-ad-mock">
+                  <div class="sales-ad-img">
+                    <div class="sales-ad-img-inner">
+                      <span class="big-price">$29.990</span>
+                      <small>Tu producto aquí</small>
+                    </div>
+                  </div>
+                  <div class="ad-meta-bar"><span style="font-family:var(--mono);font-size:.65rem">Patrocinado</span><span style="font-family:var(--mono);font-size:.65rem">Meta Ads</span></div>
+                  <button class="ad-buy-mock" id="mock-buy-btn">Comprar ahora</button>
+                </div>
+                <div class="sales-stats-mock">
+                  <div class="stats-panel-header">Resultados en Tiempo Real</div>
+                  <div class="stats-item"><span>Impresiones:</span><span class="stats-val" id="sales-impressions">0</span></div>
+                  <div class="stats-item"><span>Conversiones:</span><span class="stats-val" id="sales-purchases">0</span></div>
+                  <div class="stats-item highlight-roas"><span>ROAS:</span><span class="stats-val" id="sales-roas">0.0x</span></div>
+                  <div class="stats-item"><span>Inversión:</span><span class="stats-val" id="sales-spend">$0</span></div>
+                </div>
+              </div>
+              <div class="interactive-prompt">
+                <button class="btn btn-accent btn-trigger-flow" data-flow="ventas">Iniciar Simulación</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-pane" id="pane-trafico">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Tráfico y Visitas]</div>
+              <h3>Genera visitas masivas para tu negocio.</h3>
+              <p>Ideal para negocios que buscan posicionamiento masivo o dirigir tráfico de alta intención de compra hacia su local o sitio web en las principales regiones de Chile.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">+15.000.000</span><span class="m-lbl">Personas de audiencia</span></div>
+                <div class="metric-box"><span class="m-val">+Visitas</span><span class="m-lbl">En tu negocio</span></div>
+                <div class="metric-box"><span class="m-val">+Credibilidad</span><span class="m-lbl">En tu marca</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Atraer Clientes</a>
+            </div>
+            <div class="pane-visual">
+              <div class="traffic-flow-wrapper">
+                <div class="chile-map-container">
+                  <div class="map-bg"></div>
+                  <div class="pin santiago"></div>
+                  <div class="pin valparaiso"></div>
+                  <div class="pin concepcion"></div>
+                  <div class="traffic-particles" id="particles-container"></div>
+                </div>
+                <div class="traffic-metrics-panel">
+                  <div class="metric-row-inline"><span>R. Metropolitana:</span><strong>62%</strong></div>
+                  <div class="metric-row-inline"><span>Valparaíso / Viña:</span><strong>18%</strong></div>
+                  <div class="metric-row-inline"><span>Coquimbo / La Serena:</span><strong>20%</strong></div>
+                </div>
+              </div>
+              <div class="interactive-prompt">
+                <button class="btn btn-accent btn-trigger-flow" data-flow="trafico">Lanzar Ráfaga Regional</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="work" class="section-video js-fade">
+  <div class="video-container">
+    <div class="video-grid">
+      <div class="video-info">
+        <div class="tag-caps">Cultura Neomarket</div>
+        <h2 class="section-title">¿Cómo es trabajar junto a nosotros?</h2>
+        <p class="body-text">No mandamos informes al final del mes y desaparecemos. Operamos como un anexo de tu área comercial — monitoreamos campañas activamente, iteramos creativos y ajustamos presupuestos en tiempo real.</p>
+        <p class="body-text sec-text">Cada peso de tu inversión publicitaria está siendo observado. Si algo no funciona, lo ajustamos antes de que se note en tus resultados. Así trabajamos en Neomarket.</p>
+      </div>
+      <div class="video-player-block">
+        <div class="custom-video-frame">
+          <div class="video-overlay" id="video-cover">
+            <div class="video-thumbnail-bg">
+              <div class="brand-watermark">NEOMARKET</div>
+              <div class="video-tagline">¿Cómo sería trabajar con Neomarket?</div>
+            </div>
+            <button class="play-btn" id="btn-play-video" aria-label="Reproducir video">
+              <span class="play-icon"></span>
+            </button>
+          </div>
+          <div class="mock-video-canvas-container" id="video-canvas-container">
+            <div class="office-mockup">
+              <div class="timeline-bar"><div class="timeline-progress" id="video-progress"></div></div>
+              <div class="dashboard-graph-wrapper">
+                <svg viewBox="0 0 400 200" class="office-graph">
+                  <path d="M0,180 Q80,120 160,150 T320,50 L400,30" fill="none" stroke="#fff" stroke-width="4" id="graph-path-video"/>
+                  <circle cx="320" cy="50" r="8" fill="#fff"/>
+                  <text x="330" y="45" font-family="Outfit" font-weight="bold" font-size="12" fill="#fff">Campaña activa</text>
+                  <text x="330" y="65" font-family="Outfit" font-size="12" fill="rgba(255,255,255,0.5)">ROAS 4.8x</text>
+                </svg>
+                <div class="office-overlay-info">
+                  <span>Optimizando campaña en directo...</span>
+                  <small id="video-time">0:00 / 0:30</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="contacto" class="section-contact js-fade">
+  <div class="contact-container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="tag-caps">Hablemos</div>
+        <h2 class="section-title">Llevemos tu negocio al siguiente nivel.</h2>
+        <p class="body-text">Escríbenos directamente o agenda una llamada de diagnóstico. Revisaremos tu estructura de campañas de Meta y tu negocio junto a ti.</p>
+        <div class="contact-details-block">
+          <div class="contact-detail-item">
+            <span class="detail-label">Email Directo</span>
+            <a href="mailto:neomarket.chile@neomarket-chile.com" class="detail-val">neomarket.chile@neomarket-chile.com</a>
+          </div>
+          <div class="contact-detail-item">
+            <span class="detail-label">Sitio Web</span>
+            <span class="detail-val">neomarket-chile.com</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="detail-label">Horario</span>
+            <span class="detail-val">Lunes a Viernes // 09:00 – 20:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-block">
+        <div class="form-card-container">
+          <h3 class="form-title">Iniciar Auditoría</h3>
+          <form id="neomarket-contact-form" class="main-contact-form">
+            <div class="form-group">
+              <input type="text" id="user-name" name="nombre" required placeholder=" "/>
+              <label for="user-name">Tu nombre y apellido</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="user-email" name="correo" required placeholder=" "/>
+              <label for="user-email">Correo electrónico</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="user-company" name="empresa" required placeholder=" "/>
+              <label for="user-company">Sitio web o empresa (Ej. mitienda.cl)</label>
+            </div>
+            <div class="form-group">
+              <textarea id="user-msg" name="mensaje" required placeholder=" " rows="4"></textarea>
+              <label for="user-msg">¿Cuál es tu objetivo o idea?</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit-form" id="submit-btn">
+              Enviar solicitud
+              <span class="btn-spinner" id="form-spinner"></span>
+            </button>
+            <div class="form-feedback" id="form-msg-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="mini-scene">
+            <div class="mini-cube">
+              <div class="mf mfront"><span class="logo-n">N</span></div>
+              <div class="mf mback"><span class="logo-n">N</span></div>
+            </div>
+          </div>
+          <span class="footer-brand-name">NEOMARKET</span>
+        </div>
+        <p class="footer-brand-tag">Estrategias del mundo digital que convierten de verdad.</p>
+      </div>
+      <div class="footer-nav-columns">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#presentacion">Nosotros</a></li>
+            <li><a href="#servicios">Meta Ads</a></li>
+            <li><a href="#work">Cómo trabajamos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes Sociales</h4>
+          <ul>
+            <li><a href="#">neomarket.chile</a></li>
+            <li><a href="#">CEO: jose.nmv</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <p class="copyright">© 2026 NEOMARKET Agencia de Marketing. Todos los derechos reservados.</p>
+      <p class="footer-tagline">Chile · Meta Ads · Performance</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // 1. Logo 3D tilt on hover
+  const logoWrapper = document.querySelector('.showcase-3d-wrapper');
+  const logo3D = document.getElementById('interactive-logo-3d');
+  if (logoWrapper && logo3D) {
+    logoWrapper.addEventListener('mousemove', (e) => {
+      logo3D.style.animation = 'none';
+      const rect = logoWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      logo3D.style.transform = `rotateX(${-y*.25}deg) rotateY(${x*.25}deg)`;
+    });
+    logoWrapper.addEventListener('mouseleave', () => {
+      logo3D.style.transition = 'transform 0.5s ease';
+      logo3D.style.transform = 'rotateX(12deg) rotateY(0deg)';
+      setTimeout(() => {
+        logo3D.style.transition = 'none';
+        logo3D.style.animation = 'rotateLarge 18s linear infinite';
+      }, 500);
+    });
+  }
+
+  // 2. Mobile nav
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+  if (menuToggle && mobileOverlay) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileLinks.forEach(l => l.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }));
+  }
+
+  // 3. Campaign simulator tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panes = document.querySelectorAll('.campaign-pane');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const t = document.getElementById(`pane-${btn.dataset.campaign}`);
+      if (t) t.classList.add('active');
+    });
+  });
+
+  // 4. Leads flow simulation
+  const leadTrigger = document.querySelector('.btn-trigger-flow[data-flow="leads"]');
+  const stepAd = document.getElementById('lead-ad');
+  const stepForm = document.getElementById('lead-form');
+  const stepCrm = document.getElementById('lead-crm');
+  const conn1 = document.getElementById('conn-1');
+  const conn2 = document.getElementById('conn-2');
+  let leadsTimeout = null;
+  function runLeads() {
+    if (leadsTimeout) clearTimeout(leadsTimeout);
+    [stepAd, stepForm, stepCrm].forEach(s => s.classList.remove('active'));
+    [conn1, conn2].forEach(c => c.classList.remove('active'));
+    stepAd.classList.add('active');
+    leadsTimeout = setTimeout(() => {
+      conn1.classList.add('active'); stepForm.classList.add('active');
+      leadsTimeout = setTimeout(() => {
+        conn2.classList.add('active'); stepCrm.classList.add('active');
+      }, 1200);
+    }, 1000);
+  }
+  if (leadTrigger) leadTrigger.addEventListener('click', runLeads);
+
+  // 5. Sales simulation
+  const salesTrigger = document.querySelector('.btn-trigger-flow[data-flow="ventas"]');
+  const mockBuyBtn = document.getElementById('mock-buy-btn');
+  let salesInterval = null, isSalesRunning = false;
+  function startSales() {
+    if (isSalesRunning) return;
+    isSalesRunning = true;
+    let imp = 0, purchases = 0, spend = 0;
+    salesInterval = setInterval(() => {
+      imp += Math.floor(Math.random() * 120 + 80);
+      if (Math.random() > .82) { purchases++; spend += Math.floor(Math.random() * 3000 + 1500); }
+      const roas = spend > 0 ? (purchases * 29990 / spend).toFixed(1) : '0.0';
+      document.getElementById('sales-impressions').textContent = imp.toLocaleString('es-CL');
+      document.getElementById('sales-purchases').textContent = purchases;
+      document.getElementById('sales-roas').textContent = roas + 'x';
+      document.getElementById('sales-spend').textContent = '$' + spend.toLocaleString('es-CL');
+      if (imp >= 5000) { clearInterval(salesInterval); isSalesRunning = false; }
+    }, 200);
+  }
+  if (salesTrigger) salesTrigger.addEventListener('click', startSales);
+  if (mockBuyBtn) mockBuyBtn.addEventListener('click', () => { if (!isSalesRunning) startSales(); });
+
+  // 6. Traffic particle map
+  const trafficTrigger = document.querySelector('.btn-trigger-flow[data-flow="trafico"]');
+  const particlesContainer = document.getElementById('particles-container');
+  function createTraffic() {
+    if (!particlesContainer) return;
+    particlesContainer.innerHTML = '';
+    trafficTrigger.disabled = true;
+    trafficTrigger.innerText = 'Enviando tráfico...';
+    const mapContainer = particlesContainer.parentElement;
+    const mw = mapContainer.clientWidth, mh = mapContainer.clientHeight;
+    let spawned = 0;
+    const iv = setInterval(() => {
+      if (spawned >= 40) {
+        clearInterval(iv);
+        setTimeout(() => { trafficTrigger.disabled = false; trafficTrigger.innerText = 'Lanzar Ráfaga Regional'; }, 2000);
+        return;
+      }
+      spawned++;
+      const p = document.createElement('div');
+      p.classList.add('traffic-particle');
+      p.style.left = mw * .45 + 'px'; p.style.top = mh * .15 + 'px';
+      particlesContainer.appendChild(p);
+      const dests = [{x:mw*.47,y:mh*.45},{x:mw*.44,y:mh*.40},{x:mw*.48,y:mh*.60}];
+      const r = Math.random();
+      const dest = r < .2 ? dests[1] : r < .4 ? dests[2] : dests[0];
+      setTimeout(() => {
+        p.style.transition = `all ${Math.random()*1.2+.8}s cubic-bezier(.25,1,.5,1)`;
+        p.style.left = dest.x+'px'; p.style.top = dest.y+'px';
+        p.style.transform = 'scale(2.5)'; p.style.backgroundColor = '#6B6660';
+        setTimeout(() => { p.style.opacity='0'; setTimeout(()=>p.remove(),400); }, 1400);
+      }, 50);
+    }, 100);
+  }
+  if (trafficTrigger) trafficTrigger.addEventListener('click', createTraffic);
+
+  // 7. Simulated video player
+  const btnPlay = document.getElementById('btn-play-video');
+  const videoCover = document.getElementById('video-cover');
+  const videoProgress = document.getElementById('video-progress');
+  const videoTime = document.getElementById('video-time');
+  const graphPath = document.getElementById('graph-path-video');
+  let vidInterval = null, vidPlaying = false;
+  function playVideo() {
+    if (vidPlaying) return;
+    vidPlaying = true;
+    videoCover.style.opacity = '0';
+    setTimeout(() => videoCover.style.display = 'none', 500);
+    let elapsed = 0;
+    const paths = [
+      "M0,180 Q80,90 160,140 T320,30 L400,10",
+      "M0,180 Q80,140 160,110 T320,60 L400,20",
+      "M0,180 Q80,100 160,130 T320,40 L400,15"
+    ];
+    vidInterval = setInterval(() => {
+      elapsed += .5;
+      videoProgress.style.width = `${(elapsed/30)*100}%`;
+      const s = Math.floor(elapsed%60);
+      videoTime.innerText = `0:${s<10?'0':''}${s} / 0:30`;
+      if (elapsed%2===0 && graphPath) graphPath.setAttribute('d', paths[Math.floor(Math.random()*paths.length)]);
+      if (elapsed >= 30) {
+        clearInterval(vidInterval); vidPlaying = false;
+        videoProgress.style.width = '0%'; videoTime.innerText = '0:00 / 0:30';
+        videoCover.style.display = 'flex';
+        setTimeout(() => videoCover.style.opacity = '1', 50);
+        if (graphPath) graphPath.setAttribute('d', "M0,180 Q80,120 160,150 T320,50 L400,30");
+      }
+    }, 500);
+  }
+  if (btnPlay) btnPlay.addEventListener('click', playVideo);
+  if (videoCover) videoCover.addEventListener('click', playVideo);
+
+  // 8. Contact form — EmailJS
+  const form = document.getElementById('neomarket-contact-form');
+  const spinner = document.getElementById('form-spinner');
+  const feedback = document.getElementById('form-msg-feedback');
+  const submitBtn = document.getElementById('submit-btn');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name  = document.getElementById('user-name').value.trim();
+      const email = document.getElementById('user-email').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !emailOk) {
+        feedback.className = 'form-feedback error';
+        feedback.style.display = 'block';
+        feedback.innerText = !name ? 'Por favor ingresa tu nombre.' : 'Ingresa un correo válido.';
+        return;
+      }
+      spinner.style.display = 'inline-block';
+      feedback.className = 'form-feedback';
+      feedback.style.display = 'none';
+      submitBtn.disabled = true;
+
+      const templateParams = {
+        nombre:  name,
+        correo:  email,
+        empresa: document.getElementById('user-company').value.trim(),
+        mensaje: document.getElementById('user-msg').value.trim()
+      };
+
+      emailjs.send('service_7chnrgs', 'template_x0v8kbv', templateParams)
+        .then(() => {
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+          feedback.className = 'form-feedback success';
+          feedback.style.display = 'block';
+          feedback.innerText = '¡Solicitud enviada! Nos pondremos en contacto contigo apenas podamos.';
+          form.reset();
+          setTimeout(() => {
+            feedback.style.opacity = '0';
+            setTimeout(() => {
+              feedback.className = 'form-feedback';
+              feedback.style.display = 'none';
+              feedback.style.opacity = '1';
+            }, 500);
+          }, 6000);
+        })
+        .catch((err) => {
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+          feedback.className = 'form-feedback error';
+          feedback.style.display = 'block';
+          feedback.innerText = 'Hubo un error al enviar. Intenta de nuevo o escríbenos directo.';
+          console.error('EmailJS error:', err);
+        });
+    });
+  }
+
+  // 9. Scroll fade-in
+  const fadeEls = document.querySelectorAll('.js-fade');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, { threshold: .1 });
+  fadeEls.forEach(el => obs.observe(el));
+
+});
+</script>
+</body>
+</html>
