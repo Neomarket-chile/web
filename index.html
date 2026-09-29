@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Neomarket — Agencia de Marketing Digital y Desarrollo Web en Chile. Gestionamos campañas de Meta Ads y construimos sitios que convierten."/>
+  <title>NEOMARKET | Marketing Digital & Desarrollo Web · Chile</title>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://neomarket-chile.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="NEOMARKET | Marketing Digital & Desarrollo Web · Chile"/>
+  <meta property="og:description" content="Gestionamos campañas de Meta Ads y construimos sitios web que convierten, todo bajo un mismo equipo en Chile."/>
+  <meta property="og:url" content="https://neomarket-chile.com/"/>
+  <meta property="og:locale" content="es_CL"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Neomarket",
+    "url": "https://neomarket-chile.com",
+    "email": "neomarket.chile@neomarket-chile.com",
+    "description": "Agencia de marketing digital y desarrollo web en Chile. Gestionamos campañas de Meta Ads y construimos sitios que convierten.",
+    "areaServed": "CL",
+    "address": { "@type": "PostalAddress", "addressCountry": "CL" },
+    "sameAs": ["https://instagram.com/neomarket.chile"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("DPGW40twES7yVFaGt");</script>
+<style>
+/* ── TOKENS (identidad editorial-artesanal Neomarket) ── */
+:root {
+  --bg:       #F3EFE7;
+  --surface:  #FFFFFF;
+  --text:     #090401;
+  --accent:   #430201;
+  --red:      #430201;
+  --red-light:#5a0503;
+  --subtle:   #1C1A18;
+  --gray-dk:  #6B6660;
+  --gray-lt:  #9A9590;
+  --off-wh:   #FBF7F1;
+  --border:   color-mix(in srgb, var(--text) 12%, transparent);
+  --serif:    'Cormorant Garamond', serif;
+  --sans:     'Outfit', sans-serif;
+  --mono:     'JetBrains Mono', monospace;
+  --bw:       1px;
+  --r-sm:     .6rem;
+  --r-md:     .9rem;
+  --r-lg:     1.4rem;
+  --gm:       64px;
+  --sp:       80px;
+  --tf:       0.2s cubic-bezier(.25,1,.5,1);
+  --tm:       0.4s cubic-bezier(.25,1,.5,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;}
+body{min-height:100vh;line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em;}
+p{font-family:var(--sans);font-weight:300;font-size:1.1rem;color:var(--gray-dk);}
+a{color:inherit;text-decoration:none;}
+.mono-lbl{font-family:var(--mono);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-lt);}
+.tag-caps{font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text);margin-bottom:1rem;display:inline-block;border-bottom:1px solid var(--border);padding-bottom:4px;}
+.sec-div{width:100%;height:var(--bw);background:var(--border);}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;text-decoration:none;padding:.85rem 1.9rem;border-radius:999px;border:var(--bw) solid var(--border);font-size:.95rem;cursor:pointer;position:relative;transition:var(--tf);}
+.btn-primary{background:var(--red);color:var(--off-wh);border-color:var(--red);}
+.btn-primary:hover{background:var(--red-light);border-color:var(--red-light);transform:translateY(-3px);box-shadow:0 10px 24px -8px color-mix(in srgb, var(--red) 55%, transparent);}
+.btn-secondary{background:var(--surface);color:var(--text);}
+.btn-secondary:hover{background:var(--off-wh);border-color:var(--red);color:var(--red);transform:translateY(-3px);box-shadow:0 8px 20px -10px rgba(9,4,1,.18);}
+.btn-accent{background:var(--surface);color:var(--text);font-family:var(--mono);font-size:.8rem;padding:.6rem 1.3rem;border:1px solid var(--border);letter-spacing:.05em;text-transform:uppercase;border-radius:999px;}
+.btn-accent:hover{background:var(--red);color:var(--off-wh);border-color:var(--red);}
+.btn-sm{padding:.5rem 1.2rem;font-size:.85rem;}
+.main-header{position:sticky;top:0;width:100%;height:70px;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(12px);border-bottom:var(--bw) solid var(--border);z-index:100;}
+.header-container{max-width:1400px;height:100%;margin:0 auto;padding:0 var(--gm);display:flex;align-items:center;justify-content:space-between;}
+.logo-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);}
+.brand-name{font-family:var(--sans);font-weight:700;font-size:1.2rem;letter-spacing:.05em;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-item{font-family:var(--sans);font-weight:400;font-size:.95rem;text-decoration:none;color:var(--gray-dk);transition:var(--tf);}
+.nav-item:hover{color:var(--red);}
+.btn-nav{padding:.4rem 1.2rem;font-size:.85rem;}
+.mini-scene{perspective:150px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;}
+.mini-cube{width:26px;height:26px;position:relative;transform-style:preserve-3d;animation:spinMini 8s linear infinite;}
+@keyframes spinMini{0%{transform:rotateY(0deg) rotateX(10deg);}100%{transform:rotateY(360deg) rotateX(10deg);}}
+.mf{position:absolute;width:26px;height:26px;border-radius:8px;background:var(--red);display:flex;align-items:center;justify-content:center;}
+.mf.mfront{transform:translateZ(4px);}
+.mf.mback{transform:rotateY(180deg) translateZ(4px);}
+.mf.mright,.mf.mleft,.mf.mtop,.mf.mbottom{display:none;}
+.logo-n{color:var(--off-wh);font-family:var(--sans);font-weight:700;font-size:14px;line-height:1;}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110;}
+.hamburger{display:block;width:24px;height:2px;background:var(--text);position:relative;transition:var(--tf);}
+.hamburger::before,.hamburger::after{content:'';position:absolute;width:24px;height:2px;background:var(--text);transition:var(--tf);}
+.hamburger::before{top:-6px;left:0;}
+.hamburger::after{top:6px;left:0;}
+.menu-toggle.active .hamburger{background:transparent;}
+.menu-toggle.active .hamburger::before{transform:rotate(45deg);top:0;}
+.menu-toggle.active .hamburger::after{transform:rotate(-45deg);top:0;}
+.mobile-menu-overlay{position:fixed;top:70px;left:0;width:100vw;height:calc(100vh - 70px);background:var(--bg);z-index:95;display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:var(--tm);border-bottom:var(--bw) solid var(--border);}
+.mobile-nav-item:hover{color:var(--red);}
+.mobile-menu-overlay.active{transform:translateX(0);}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;align-items:center;gap:32px;}
+.mobile-nav-item{font-family:var(--serif);font-size:2.2rem;font-weight:700;text-decoration:none;color:var(--text);transition:var(--tf);}
+.btn-mobile-nav{font-family:var(--sans);font-size:1.1rem;padding:.8rem 2.4rem;}
+.hero-section{position:relative;padding:var(--sp) 0;background:var(--bg);}
+.hero-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;}
+.hero-title{font-size:4.8rem;line-height:1.05;margin-bottom:24px;}
+.hero-title span{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--red);}
+.hero-subtitle{font-size:1.25rem;margin-bottom:40px;max-width:600px;}
+.hero-ctas{display:flex;gap:16px;}
+.hero-visual-block{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;}
+.showcase-3d-wrapper{perspective:1200px;width:320px;height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+.logo-3d-large{width:220px;height:220px;position:relative;transform-style:preserve-3d;animation:rotateLarge 18s linear infinite;cursor:pointer;}
+@keyframes rotateLarge{0%{transform:rotateY(0deg) rotateX(12deg);}100%{transform:rotateY(360deg) rotateX(12deg);}}
+.logo-3d-large .lface{position:absolute;width:220px;height:220px;border-radius:var(--r-lg);background:var(--red);display:flex;align-items:center;justify-content:center;}
+.logo-3d-large .lface.lfront{transform:translateZ(6px);}
+.logo-3d-large .lface.lback{transform:rotateY(180deg) translateZ(6px);}
+.logo-3d-large .lface.lright,.logo-3d-large .lface.lleft,.logo-3d-large .lface.ltop,.logo-3d-large .lface.lbottom{display:none;}
+.logo-svg-main{width:130px;height:130px;}
+.hero-logo-shadow{width:140px;height:16px;margin:12px auto 0;background:radial-gradient(ellipse at 50% 40%,rgba(67,2,1,.22) 0%,rgba(67,2,1,.08) 40%,transparent 75%);border-radius:50% 50% 48% 52%/60% 60% 40% 40%;filter:blur(5px);animation:shadowSync 18s linear infinite;}
+@keyframes shadowSync{0%,100%{width:140px;opacity:.9;transform:scaleX(1);}25%{width:80px;opacity:.45;transform:scaleX(.58);}50%{width:140px;opacity:.9;transform:scaleX(1);}75%{width:80px;opacity:.45;transform:scaleX(.58);}}
+.visual-caption{margin-top:16px;}
+.section-presentation{padding:var(--sp) 0;}
+.presentation-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.presentation-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.section-title{font-size:3.2rem;margin-bottom:24px;}
+.body-text{margin-bottom:24px;}
+.body-text.sec-text{color:var(--gray-dk);font-size:1rem;}
+.presentation-stats{display:grid;grid-template-columns:1fr;gap:32px;}
+.stat-card{border:var(--bw) solid var(--border);border-radius:var(--r-md);padding:24px;background:var(--surface);transition:var(--tf);}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(9,4,1,.18);border-color:color-mix(in srgb, var(--red) 30%, var(--border));}
+.stat-num{font-family:var(--sans);font-size:3.2rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1;margin-bottom:8px;color:var(--red);}
+.hl-red{color:var(--red);text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:5px;}
+.stat-label{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--text);text-transform:uppercase;letter-spacing:.05em;}
+.stat-details{font-family:var(--mono);font-size:.75rem;color:var(--gray-lt);margin-top:4px;}
+.section-services{padding:var(--sp) 0;}
+.services-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.services-header{max-width:700px;margin-bottom:60px;}
+.services-desc{margin-top:16px;}
+.campaign-simulator{border:var(--bw) solid var(--border);border-radius:var(--r-lg);background:var(--surface);display:flex;flex-direction:column;overflow:hidden;}
+.simulator-tabs{display:flex;border-bottom:var(--bw) solid var(--border);background:var(--surface);}
+.tab-btn{flex:1;background:none;border:none;border-right:var(--bw) solid var(--border);padding:18px 24px;font-family:var(--sans);font-weight:600;font-size:1rem;text-align:left;cursor:pointer;display:inline-flex;align-items:center;gap:10px;color:var(--gray-dk);transition:var(--tf);}
+.tab-btn:last-child{border-right:none;}
+.tab-btn:hover{color:var(--text);background:var(--off-wh);}
+.tab-btn.active{color:var(--red);background:var(--off-wh);}
+.tab-dot{width:8px;height:8px;border:1px solid var(--border);border-radius:50%;background:transparent;display:inline-block;transition:var(--tf);}
+.tab-btn.active .tab-dot{background:var(--red);border-color:var(--red);}
+.simulator-viewport{padding:48px;position:relative;}
+.campaign-pane{display:none;}
+.campaign-pane.active{display:block;animation:fadeInUp .4s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.pane-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;}
+.pane-meta{font-family:var(--mono);font-size:.8rem;color:var(--gray-lt);margin-bottom:12px;}
+.pane-details h3{font-size:2.5rem;margin-bottom:16px;}
+.pane-details p{margin-bottom:32px;}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.metric-box{border:1px solid var(--border);border-radius:var(--r-sm);padding:16px;background:var(--off-wh);}
+.m-val{display:block;font-family:var(--sans);font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:var(--red);line-height:1.2;}
+.m-lbl{display:block;font-family:var(--sans);font-size:.75rem;color:var(--gray-dk);margin-top:4px;text-transform:uppercase;}
+.pane-visual{background:var(--off-wh);border:1px solid var(--border);border-radius:var(--r-md);padding:32px;min-height:380px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.interactive-prompt{margin-top:24px;text-align:center;z-index:2;}
+.lead-flow-wrapper{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;}
+.flow-step{flex:1 1 0;min-width:0;max-width:160px;display:flex;flex-direction:column;align-items:center;opacity:.35;transition:var(--tm);}
+.flow-step.active{opacity:1;}
+.flow-connector{font-size:1.8rem;color:var(--gray-lt);transition:var(--tm);}
+.flow-connector.active{color:var(--text);}
+.flow-label{font-family:var(--mono);font-size:.75rem;color:var(--text);margin-top:12px;text-align:center;text-transform:uppercase;}
+.phone-frame{width:100%;aspect-ratio:144/240;height:auto;border:var(--bw) solid var(--border);border-radius:16%;background:var(--surface);overflow:hidden;position:relative;padding:5%;}
+.phone-screen{width:100%;height:100%;background:#fafafa;border-radius:12px;overflow:hidden;}
+.insta-post{display:flex;flex-direction:column;height:100%;justify-content:space-between;font-family:var(--sans);}
+.insta-header{display:flex;align-items:center;gap:6px;padding:6px;border-bottom:1px solid #eee;}
+.insta-avatar{width:15px;height:15px;border-radius:50%;background:var(--text);}
+.insta-username{font-size:10px;font-weight:700;}
+.insta-img{height:112px;background:var(--red);display:flex;align-items:center;justify-content:center;padding:9px;}
+.insta-img-placeholder{color:var(--off-wh);text-align:center;font-size:10px;display:flex;flex-direction:column;gap:3px;}
+.insta-img-placeholder small{font-size:7px;color:var(--gray-lt);}
+.insta-action{background:var(--red);color:var(--off-wh);display:flex;justify-content:space-between;align-items:center;padding:6px 9px;font-size:10px;}
+.form-screen{background:var(--bg);padding:9px;display:flex;flex-direction:column;justify-content:space-between;}
+.form-header{display:flex;align-items:center;gap:6px;border-bottom:1px solid #eee;padding-bottom:6px;}
+.form-logo{width:19px;height:19px;background:var(--red);color:var(--off-wh);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;border-radius:4px;}
+.form-header h6{font-size:10px;font-family:var(--sans);}
+.mock-fb-form{display:flex;flex-direction:column;gap:6px;}
+.mock-input{display:flex;flex-direction:column;}
+.mock-input label{font-size:7px;color:var(--gray-dk);}
+.mock-input input{font-size:10px;border:1px solid #ccc;padding:3px;background:#f9f9f9;border-radius:2px;}
+.mock-btn-submit{background:var(--red);color:var(--off-wh);border:none;border-radius:4px;font-size:8px;padding:5px;cursor:pointer;font-weight:bold;}
+.crm-card{width:100%;border:var(--bw) solid var(--border);border-radius:12px;background:var(--surface);padding:10%;font-family:var(--mono);box-sizing:border-box;}
+.crm-header{font-size:10px;color:var(--gray-lt);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:6px;}
+.crm-entry{font-size:10px;color:var(--text);padding:5px 0;border-bottom:1px solid #eee;}
+.crm-entry strong{color:var(--text);}
+.crm-entry span{color:var(--gray-dk);}
+.crm-status{margin-top:6px;font-size:8px;color:var(--gray-lt);text-align:right;}
+.sales-flow-wrapper{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;}
+.flow-box{width:100%;aspect-ratio:1;border-radius:var(--r-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;box-sizing:border-box;}
+.flow-box-ad{background:var(--red);padding:14px;}
+.flow-box-tag{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(251,247,241,.7);}
+.flow-box-icon-wrap{width:56px;height:56px;border-radius:50%;background:rgba(251,247,241,.12);display:flex;align-items:center;justify-content:center;}
+.flow-box-icon{width:28px;height:28px;}
+.flow-box-chat{background:var(--surface);border:var(--bw) solid var(--border);padding:14px;gap:8px;}
+.chat-bubble{font-family:var(--sans);font-size:.68rem;line-height:1.3;padding:8px 10px;border-radius:12px;max-width:100%;}
+.chat-bubble-in{align-self:flex-start;background:var(--off-wh);color:var(--text);border-bottom-left-radius:4px;}
+.chat-bubble-out{align-self:flex-end;background:var(--red);color:var(--off-wh);border-bottom-right-radius:4px;}
+.flow-box-roas{background:var(--off-wh);border:1.5px dashed color-mix(in srgb, var(--red) 50%, var(--border));}
+.roas-symbol{font-family:var(--sans);font-size:2.6rem;font-weight:700;color:var(--red);line-height:1;}
+.roas-title{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--gray-dk);text-transform:uppercase;}
+.map-showcase{position:relative;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--off-wh);overflow:hidden;padding:28px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.map-showcase-svg{width:100%;max-width:280px;height:auto;}
+.map-caption{font-family:var(--mono);font-size:.75rem;color:var(--gray-dk);text-align:center;}
+.map-caption strong{color:var(--red);}
+.map-regions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.map-region-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-dk);border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;}
+.section-video{padding:var(--sp) 0;}
+.video-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.video-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+.process-timeline{border:var(--bw) solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:40px;position:relative;}
+.process-step{display:flex;gap:24px;position:relative;padding-bottom:36px;}
+.process-step:last-child{padding-bottom:0;}
+.process-step::before{content:'';position:absolute;left:19px;top:44px;bottom:-4px;width:1.5px;background:var(--border);}
+.process-step:last-child::before{display:none;}
+.process-step-marker{flex:0 0 40px;height:40px;border-radius:50%;background:var(--off-wh);border:1.5px solid var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--red);z-index:1;}
+.process-step.done .process-step-marker{background:var(--red);color:var(--off-wh);}
+.process-step-body{padding-top:6px;flex:1;min-width:0;}
+.process-step-time{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block;}
+.process-step-card{background:var(--red);border-radius:var(--r-md);padding:16px 20px;}
+.process-step-title{font-family:var(--sans);font-weight:600;font-size:1.05rem;color:var(--off-wh);margin-bottom:6px;}
+.process-step-desc{font-family:var(--sans);font-weight:300;font-size:.92rem;color:color-mix(in srgb, var(--off-wh) 85%, transparent);line-height:1.55;}
+.section-webdev{padding:var(--sp) 0;}
+.webdev-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.webdev-header{max-width:700px;margin-bottom:48px;}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px;}
+.type-card{border:var(--bw) solid var(--border);border-radius:var(--r-md);background:var(--surface);padding:28px 24px;}
+.type-card-icon{width:44px;height:44px;border-radius:12px;background:var(--off-wh);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.type-card-icon svg{width:22px;height:22px;stroke:var(--red);}
+.type-card h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;margin-bottom:8px;color:var(--text);}
+.type-card p{font-family:var(--sans);font-weight:300;font-size:.88rem;color:var(--gray-dk);}
+.type-card.type-card-red{background:var(--red);}
+.type-card.type-card-red .type-card-icon{background:rgba(251,247,241,.14);}
+.type-card.type-card-red .type-card-icon svg{stroke:var(--off-wh);}
+.type-card.type-card-red h3{color:var(--off-wh);}
+.type-card.type-card-red p{color:color-mix(in srgb, var(--off-wh) 82%, transparent);}
+.portfolio-label{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-lt);margin-bottom:20px;}
+.portfolio-grid{display:grid;grid-template-columns:minmax(0,480px);gap:24px;}
+.portfolio-card{border:var(--bw) solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:14px;}
+.portfolio-badge{align-self:flex-start;font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;border:1px solid var(--border);color:var(--gray-dk);}
+.portfolio-badge.badge-client{color:var(--red);border-color:color-mix(in srgb, var(--red) 40%, var(--border));background:color-mix(in srgb, var(--red) 6%, transparent);}
+.portfolio-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text);}
+.portfolio-desc{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--gray-dk);}
+.webdev-note{margin-top:16px;font-family:var(--mono);font-size:.72rem;color:var(--gray-lt);}
+@media(max-width:1024px){.type-grid{grid-template-columns:1fr;}}
+.section-cases{padding:var(--sp) 0;}
+.cases-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.cases-header{max-width:700px;margin-bottom:48px;}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.case-card{border:var(--bw) solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:32px;display:flex;flex-direction:column;gap:16px;transition:var(--tf);position:relative;}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -18px rgba(9,4,1,.2);}
+.case-badge{align-self:flex-start;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--border);color:var(--gray-dk);}
+.case-badge.badge-live{color:var(--red);border-color:color-mix(in srgb, var(--red) 40%, var(--border));background:color-mix(in srgb, var(--red) 6%, transparent);}
+.case-client{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text);}
+.case-industry{font-family:var(--mono);font-size:.75rem;color:var(--gray-lt);text-transform:uppercase;letter-spacing:.08em;margin-top:-10px;}
+.case-desc{font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--gray-dk);}
+.case-empty{border:1.5px dashed var(--border);border-radius:var(--r-lg);background:transparent;padding:32px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:10px;min-height:100%;}
+.case-empty .case-desc{margin-bottom:4px;}
+.cases-note{margin-top:32px;font-family:var(--mono);font-size:.8rem;color:var(--gray-lt);}
+@media(max-width:1024px){.cases-grid{grid-template-columns:1fr;}}
+.section-contact{padding:var(--sp) 0;}
+.contact-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-details-block{margin-top:48px;display:flex;flex-direction:column;gap:24px;}
+.contact-detail-item{display:flex;flex-direction:column;}
+.detail-label{font-family:var(--mono);font-size:.8rem;color:var(--gray-lt);text-transform:uppercase;margin-bottom:4px;}
+.detail-val{font-size:1.2rem;font-weight:500;color:var(--text);transition:var(--tf);}
+a.detail-val:hover{color:var(--gray-dk);}
+.form-card-container{border:var(--bw) solid var(--border);border-radius:var(--r-lg);padding:40px;background:var(--surface);box-shadow:0 20px 50px -30px rgba(9,4,1,.25);}
+.form-title{font-size:2.2rem;margin-bottom:32px;}
+.main-contact-form{display:flex;flex-direction:column;gap:28px;}
+.form-group{position:relative;width:100%;}
+.form-group input,.form-group textarea{width:100%;padding:8px 0;font-family:var(--sans);font-size:1rem;border:none;border-bottom:var(--bw) solid var(--border);background:transparent;color:var(--text);outline:none;transition:border-color var(--tf);}
+.form-group textarea{resize:none;}
+.form-group label{position:absolute;top:8px;left:0;font-family:var(--sans);font-size:1rem;color:var(--gray-dk);pointer-events:none;transition:var(--tf);}
+.form-group input:focus~label,.form-group input:not(:placeholder-shown)~label,.form-group textarea:focus~label,.form-group textarea:not(:placeholder-shown)~label{top:-16px;font-size:.75rem;font-family:var(--mono);text-transform:uppercase;color:var(--red);}
+.form-group input:focus,.form-group textarea:focus{border-bottom-color:var(--red);}
+.btn-submit-form{width:100%;margin-top:12px;}
+.btn-spinner{display:none;width:16px;height:16px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;margin-left:10px;animation:spin .8s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.form-feedback{font-family:var(--mono);font-size:.8rem;margin-top:12px;display:none;}
+.form-feedback.success{display:block;color:#2b7a3e;}
+.form-feedback.error{display:block;color:#c62828;}
+.main-footer{background:var(--bg);border-top:var(--bw) solid var(--border);padding:60px 0 40px;}
+.footer-container{max-width:1400px;margin:0 auto;padding:0 var(--gm);}
+.footer-top-row{display:flex;justify-content:space-between;margin-bottom:60px;gap:40px;}
+.footer-brand{max-width:400px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;}
+.footer-brand-name{font-family:var(--sans);font-weight:700;font-size:1.2rem;letter-spacing:.05em;display:inline-block;}
+.footer-brand-tag{font-size:.95rem;margin-top:8px;}
+.footer-nav-columns{display:flex;gap:80px;}
+.footer-col h4{font-family:var(--mono);font-size:.8rem;text-transform:uppercase;color:var(--gray-lt);margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{font-family:var(--sans);font-size:.95rem;color:var(--gray-dk);text-decoration:none;transition:var(--tf);}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(14,13,12,.1);padding-top:24px;font-size:.85rem;color:var(--gray-dk);}
+.footer-tagline{font-family:var(--mono);font-size:.75rem;}
+.js-fade{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.js-fade.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){
+  :root{--gm:32px;}
+  .hero-container{grid-template-columns:1fr;gap:48px;}
+  .hero-visual-block{order:-1;}
+  .presentation-grid,.contact-grid,.video-grid{grid-template-columns:1fr;gap:48px;}
+  .pane-grid{grid-template-columns:1fr;gap:32px;}
+  .pane-visual{order:-1;min-height:auto;}
+}
+@media(max-width:768px){
+  :root{--gm:20px;--sp:60px;}
+  .main-nav .nav-links{display:none;}
+  .menu-toggle{display:block;}
+  .hero-title{font-size:3.2rem;}
+  .section-title{font-size:2.4rem;}
+  .simulator-viewport{padding:20px;}
+  .metric-grid{grid-template-columns:1fr;}
+  .lead-flow-wrapper{flex-direction:column;gap:16px;}
+  .flow-connector{transform:rotate(90deg);}
+  .sales-flow-wrapper{flex-direction:column;gap:16px;}
+  .form-card-container{padding:24px;}
+  .footer-top-row{flex-direction:column;gap:32px;}
+  .footer-nav-columns{gap:48px;}
+  .footer-bottom-row{flex-direction:column;align-items:flex-start;gap:12px;}
+}
+</style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+    <a href="#" class="logo-link" id="logo-nav">
+      <div class="mini-scene">
+        <div class="mini-cube">
+          <div class="mf mfront"><span class="logo-n">N</span></div>
+          <div class="mf mback"><span class="logo-n">N</span></div>
+        </div>
+      </div>
+      <span class="brand-name">NEOMARKET</span>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="#presentacion" class="nav-item">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-item">Meta Ads</a></li>
+        <li><a href="#desarrollo-web" class="nav-item">Desarrollo Web</a></li>
+        <li><a href="#work" class="nav-item">Cómo trabajamos</a></li>
+        <li><a href="#casos" class="nav-item">Casos</a></li>
+        <li><a href="https://portal.neomarket-chile.com" target="_blank" class="nav-item">Portal Cliente</a></li>
+        <li><a href="#contacto" class="btn btn-nav">Escríbenos</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Abrir menú"><span class="hamburger"></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay">
+  <ul class="mobile-nav-links">
+    <li><a href="#presentacion" class="mobile-nav-item">Nosotros</a></li>
+    <li><a href="#servicios" class="mobile-nav-item">Meta Ads</a></li>
+    <li><a href="#desarrollo-web" class="mobile-nav-item">Desarrollo Web</a></li>
+    <li><a href="#work" class="mobile-nav-item">Cómo trabajamos</a></li>
+    <li><a href="#casos" class="mobile-nav-item">Casos</a></li>
+    <li><a href="https://portal.neomarket-chile.com" target="_blank" class="mobile-nav-item">Portal Cliente</a></li>
+    <li><a href="#contacto" class="mobile-nav-item btn btn-mobile-nav">Escríbenos</a></li>
+  </ul>
+</div>
+
+<main>
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-text-block">
+      <div class="tag-caps">Marketing Digital & Desarrollo Web / Chile</div>
+      <h1 class="hero-title">Hacemos crecer tu negocio con <span class="hl-red">campañas y sitios que venden</span>.</h1>
+      <p class="hero-subtitle">Gestionamos tus campañas de Meta Ads y construimos el sitio que las recibe — mismo equipo, sin traspasos entre proveedores. Sin números ni promesas falsas.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-primary">Iniciar Auditoría</a>
+        <a href="#servicios" class="btn btn-secondary">Ver Campañas</a>
+        <a href="#desarrollo-web" class="btn btn-secondary">Desarrollo Web</a>
+      </div>
+    </div>
+    <div class="hero-visual-block">
+      <div class="showcase-3d-wrapper">
+        <div class="logo-3d-large" id="interactive-logo-3d">
+          <div class="lface lfront">
+            <svg viewBox="0 0 100 100" class="logo-svg-main" fill="none">
+              <path d="M22 78L22 22L78 78L78 22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="lface lback">
+            <svg viewBox="0 0 100 100" class="logo-svg-main" fill="none">
+              <path d="M22 78L22 22L78 78L78 22" stroke="rgba(255,255,255,0.12)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-logo-shadow"></div>
+      </div>
+      <div class="visual-caption"></div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="presentacion" class="section-presentation js-fade">
+  <div class="presentation-container">
+    <div class="presentation-grid">
+      <div class="presentation-info">
+        <div class="tag-caps">Quiénes Somos</div>
+        <h2 class="section-title">La agencia que no le teme a el mercado online.</h2>
+        <p class="body-text">En Neomarket no vendemos campañas sin resultados ni futuro. Ayudamos a negocios que no encuentran la forma de hacer crecer su publicidad — o simplemente no la hacen. Nos especializamos en crear, subir y monitorear campañas en Meta Ads que hacen crecer tu negocio de forma <span class="hl-red">medible y constante</span>.</p>
+        <p class="body-text sec-text">Entendemos a la audiencia local, las dinámicas de los chilenos y cómo conectar tu marca con las personas que ya están buscando lo que tú ofreces. No configuramos y olvidamos — seguimos los números hasta que nos dan resultados.</p>
+      </div>
+      <div class="presentation-stats">
+        <div class="stat-card">
+          <div class="stat-num">Meta Ads</div>
+          <div class="stat-label">Plataforma Principal</div>
+          <div class="stat-details">Facebook & Instagram como canal de crecimiento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Monitoreo Activo</div>
+          <div class="stat-details">Seguimiento diario de cada campaña activa</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">+ROAS</div>
+          <div class="stat-label">Objetivo Central</div>
+          <div class="stat-details">Retorno real sobre inversión publicitaria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="servicios" class="section-services js-fade">
+  <div class="services-container">
+    <div class="services-header">
+      <div class="tag-caps">Nuestra Especialidad</div>
+      <h2 class="section-title">Estrategias de Meta Ads de Alto Rendimiento</h2>
+      <p class="services-desc">No todas las campañas se configuran igual. Dependiendo de tu modelo de negocio, diseñamos arquitecturas específicas para cada objetivo comercial.</p>
+    </div>
+    <div class="campaign-simulator">
+      <div class="simulator-tabs">
+        <button class="tab-btn active" data-campaign="leads"><span class="tab-dot"></span> Captación de Leads</button>
+        <button class="tab-btn" data-campaign="ventas"><span class="tab-dot"></span> Ventas / Conversión</button>
+        <button class="tab-btn" data-campaign="trafico"><span class="tab-dot"></span> Tráfico Calificado</button>
+      </div>
+      <div class="simulator-viewport">
+        <div class="campaign-pane active" id="pane-leads">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Generación de Clientes Potenciales]</div>
+              <h3>Llena la <span class="hl-red">agenda</span> de tu <span class="hl-red">equipo</span> comercial.</h3>
+              <p>Diseñamos formularios instantáneos integrados en Instagram y Facebook, optimizados para adquirir datos reales de usuarios y sincronizados en tiempo real con tu proceso de ventas.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">20.150.984</span><span class="m-lbl">Personas en Chile</span></div>
+                <div class="metric-box"><span class="m-val">74,7%</span><span class="m-lbl">Usa Redes</span></div>
+                <div class="metric-box"><span class="m-val">15.052.785</span><span class="m-lbl">Posibles Leads</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Quiero Leads</a>
+            </div>
+            <div class="pane-visual">
+              <div class="lead-flow-wrapper">
+                <div class="flow-step step-ad active" id="lead-ad">
+                  <div class="phone-frame"><div class="phone-screen"><div class="insta-post">
+                    <div class="insta-header"><div class="insta-avatar"></div><div class="insta-username">neomarket</div></div>
+                    <div class="insta-img"><div class="insta-img-placeholder"><span>¿Tu negocio no escala?</span><small>Meta Ads que facturan</small></div></div>
+                    <div class="insta-action"><span>Registrarte</span><span>→</span></div>
+                  </div></div></div>
+                  <div class="flow-label">1. Anuncio</div>
+                </div>
+                <div class="flow-connector" id="conn-1">→</div>
+                <div class="flow-step step-form" id="lead-form">
+                  <div class="phone-frame"><div class="phone-screen form-screen">
+                    <div class="form-header"><div class="form-logo">N</div><h6>NEOMARKET</h6></div>
+                    <form class="mock-fb-form" onsubmit="return false;">
+                      <div class="mock-input"><label>Nombre</label><input type="text" value="María González" readonly></div>
+                      <div class="mock-input"><label>Teléfono</label><input type="text" value="+56 9 8765 4321" readonly></div>
+                      <div class="mock-input"><label>Email</label><input type="text" value="maria@empresa.cl" readonly></div>
+                      <button class="mock-btn-submit">Enviar</button>
+                    </form>
+                  </div></div>
+                  <div class="flow-label">2. Formulario</div>
+                </div>
+                <div class="flow-connector" id="conn-2">→</div>
+                <div class="flow-step step-success" id="lead-crm">
+                  <div class="crm-card">
+                    <div class="crm-header">LEAD RECIBIDO</div>
+                    <div class="crm-entry"><strong>Nombre:</strong><br><span>María González</span></div>
+                    <div class="crm-entry"><strong>Tel:</strong><br><span>+56 9 8765 4321</span></div>
+                    <div class="crm-entry"><strong>Email:</strong><br><span>maria@empresa.cl</span></div>
+                    <div class="crm-status">✓ Sincronizado</div>
+                  </div>
+                  <div class="flow-label">3. Entregado</div>
+                </div>
+              </div>
+              <div class="interactive-prompt">
+                <button class="btn btn-accent btn-trigger-flow" data-flow="leads">Simular Flujo de Lead</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-pane" id="pane-ventas">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Ventas y Conversión]</div>
+              <h3>Convierte audiencias en <span class="hl-red">clientes reales</span>.</h3>
+              <p>Optimizamos cada peso de tu inversión para que quienes ven tu anuncio actúen: visiten tu local, compren online o se contacten directamente contigo.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">+ROAS</span><span class="m-lbl">Sube tu ROAS</span></div>
+                <div class="metric-box"><span class="m-val">$CLP</span><span class="m-lbl">Gana en CLP</span></div>
+                <div class="metric-box"><span class="m-val">+Ventas</span><span class="m-lbl">vs. Sin Optimizar</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Quiero Ventas</a>
+            </div>
+            <div class="pane-visual">
+              <div class="sales-flow-wrapper">
+                <div class="flow-step active">
+                  <div class="flow-box flow-box-ad">
+                    <span class="flow-box-tag">Patrocinado</span>
+                    <div class="flow-box-icon-wrap">
+                      <svg class="flow-box-icon" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="var(--off-wh)" stroke-width="1.6"/><path d="M6 16l4-4 3 3 5-6" stroke="var(--off-wh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="8.5" r="1.4" fill="var(--off-wh)"/></svg>
+                    </div>
+                  </div>
+                  <div class="flow-label">1. Anuncio</div>
+                </div>
+                <div class="flow-connector active">→</div>
+                <div class="flow-step active">
+                  <div class="flow-box flow-box-chat">
+                    <div class="chat-bubble chat-bubble-in">Hola, vi su anuncio 👋</div>
+                    <div class="chat-bubble chat-bubble-out">¡Hola! Te ayudo ahora mismo</div>
+                  </div>
+                  <div class="flow-label">2. Conversación</div>
+                </div>
+                <div class="flow-connector active">→</div>
+                <div class="flow-step active">
+                  <div class="flow-box flow-box-roas">
+                    <span class="roas-symbol">$</span>
+                    <span class="roas-title">ROAS</span>
+                  </div>
+                  <div class="flow-label">3. Retorno</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-pane" id="pane-trafico">
+          <div class="pane-grid">
+            <div class="pane-details">
+              <div class="pane-meta">[Meta Objective: Tráfico y Visitas]</div>
+              <h3>Genera <span class="hl-red">visitas masivas</span> para tu negocio.</h3>
+              <p>Ideal para negocios que buscan posicionamiento masivo o dirigir tráfico de alta intención de compra hacia su local o sitio web en las principales regiones de Chile.</p>
+              <div class="metric-grid">
+                <div class="metric-box"><span class="m-val">+15.000.000</span><span class="m-lbl">Personas de audiencia</span></div>
+                <div class="metric-box"><span class="m-val">+Visitas</span><span class="m-lbl">En tu negocio</span></div>
+                <div class="metric-box"><span class="m-val">+Credibilidad</span><span class="m-lbl">En tu marca</span></div>
+              </div>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Atraer Clientes</a>
+            </div>
+            <div class="pane-visual">
+              <div class="map-showcase">
+                <svg class="map-showcase-svg" viewBox="0 0 460 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa real de Latinoamérica con Chile destacado en rojo">
+                  <path d="M270.047,549.119L271.964,552.98L274.478,559.309L281.008,564.464L288.044,566.621L285.783,571.004L281.008,571.437L278.457,568.347L275.419,568.11L270.047,568.096ZM325.359,396.358L324.093,401.032L322.755,407.089L322.809,413.02L321.705,414.361L321.326,418.261L320.982,421.426L327.367,426.671L326.68,430.94L329.809,433.648L329.556,436.711L324.726,444.831L317.274,448.273L307.199,449.616L301.682,448.971L302.749,452.83L301.718,457.722L302.641,461.051L299.62,463.39L294.483,464.315L289.654,461.882L287.7,463.627L288.406,470.298L291.806,472.342L294.556,470.207L296.039,473.737L291.426,475.855L287.393,480.135L286.651,487.169L285.457,490.955L280.718,490.979L276.775,494.629L275.328,500.046L280.266,505.412L285.078,506.899L283.341,513.607L277.408,517.874L274.152,526.896L269.558,529.996L267.514,533.686L269.124,542.028L272.47,546.759L270.354,546.342L265.705,545.051L253.55,543.958L251.47,539.236L251.579,533.243L248.233,533.753L246.46,530.888L246.026,522.632L249.879,519.255L251.47,514.436L250.873,510.637L253.55,504.315L255.377,494.702L254.835,490.509L257.041,489.165L256.499,486.502L254.165,485.1L255.829,482.168L253.55,479.538L252.375,471.629L254.401,470.252L253.55,462.084L254.726,455.336L256.083,449.539L259.085,447.195L257.566,440.974L257.548,435.182L261.346,431.108L261.22,425.942L264.096,419.985L264.114,414.422L262.811,413.325L260.496,403.07L263.589,397.057L263.101,391.449L264.91,386.232L268.202,380.887L271.747,377.377L270.245,375.169L271.295,373.366L271.132,364.096L276.594,361.382L278.331,355.688L277.716,354.322L281.894,349.414L288.478,350.734L291.426,354.663L293.398,350.294L299.114,350.514L299.928,351.68L309.171,360.591L313.276,361.419L319.408,365.5L324.581,367.667L325.305,370.123L320.367,378.647L325.432,380.178L331.075,381.05L335.054,380.139L339.612,375.815L340.426,370.878L342.922,369.803L345.437,373.025L345.328,377.511L341.096,380.628L337.731,382.942L332.052,388.48ZM254.581,135.905L255.016,138.8L254.636,140.851L253.406,141.739L254.69,143.326L254.599,144.767L251.253,143.873L248.884,144.24L245.827,143.855L243.475,144.839L240.78,143.192L241.214,141.488L245.845,142.224L249.643,142.645L251.452,141.47L249.155,139.169L249.191,137.133L246.026,136.303L247.147,134.83L250.222,135.065ZM254.599,144.767L254.69,143.326L253.406,141.739L254.636,140.851L255.016,138.8L254.581,135.905L255.196,134.993L259.121,135.02L262.106,136.393L263.426,136.258L264.331,138.143L267.08,138.044L266.917,139.628L269.16,139.817L271.62,141.766L269.757,143.917L267.37,142.771L265.072,142.995L263.408,142.744L262.504,143.703L260.587,144.034L259.809,142.744L258.145,143.506L256.137,147.126L254.853,146.287ZM26.385,63.935L32.101,63.471L38.486,62.824L38.016,63.995L45.594,66.882L57.062,71.04L67.047,71L71.044,71L71.044,68.565L79.744,68.565L81.589,70.661L84.158,72.511L87.142,75.087L88.806,78.133L90.054,81.32L92.659,83.057L96.819,84.78L99.984,80.224L104.09,80.116L107.636,82.423L110.15,86.353L111.886,89.698L114.853,92.939L115.956,96.897L117.367,99.531L121.292,101.276L124.855,102.505L126.809,102.335L124.873,107.213L123.987,111.198L123.625,118.539L123.137,121.203L124.005,124.16L125.561,126.795L126.574,130.968L129.902,134.956L131.078,137.999L133.049,140.617L138.385,142.027L140.447,144.24L144.86,142.762L148.695,142.224L152.457,141.273L155.623,140.365L158.806,138.197L160.018,135.083L160.416,130.586L161.284,129.012L164.685,127.598L170.003,126.347L174.452,126.539L177.509,126.082L178.703,127.224L178.54,129.822L175.845,133.01L174.651,136.267L175.574,137.196L174.814,139.493L173.566,143.631L172.282,142.269L171.233,142.358L170.274,142.43L168.483,145.626L167.561,145L166.964,145.241L167,146.019L162.351,145.956L157.667,145.965L157.649,148.935L155.388,148.944L157.251,150.706L159.114,151.914L159.674,153.049L160.488,153.369L160.362,155.149L153.904,155.167L151.499,159.415L152.204,160.393L151.625,161.607L151.499,163.119L145.819,157.518L143.214,155.83L139.127,154.458L136.305,154.839L132.271,156.811L129.739,157.324L126.194,155.945L122.432,154.954L117.729,152.553L113.966,151.816L108.287,149.371L104.072,146.858L102.806,145.447L100.003,145.134L94.866,143.461L92.767,141.039L87.359,138.026L84.845,134.658L83.651,132.048L85.333,131.531L84.809,129.995L85.966,128.602L85.984,126.74L84.302,124.307L83.85,122.15L82.15,119.407L77.736,113.973L72.672,109.667L70.23,106.217L65.925,103.949L65.003,102.581L65.762,99.123L63.194,97.811L60.227,95.074L58.979,91.123L56.284,90.662L53.354,87.66L51.003,84.868L50.786,83.077L48.09,78.713L46.3,74.256L46.39,72.005L42.755,69.674L41.072,69.923L38.196,68.295L37.401,70.691L38.233,73.513L38.721,77.897L40.439,80.282L44.165,84.255L44.997,85.606L45.757,86.014L46.426,87.98L47.313,87.902L48.326,91.575L49.863,93.015L50.93,95.026L54.078,97.887L55.742,103.1L57.243,105.541L58.636,108.141L58.907,111.049L61.331,111.235L63.357,113.731L65.165,116.181L65.057,117.162L62.941,119.167L62.054,119.139L60.716,115.819L57.442,112.689L53.806,110.022L51.238,108.619L51.401,104.562L50.641,101.541L48.253,99.807L44.798,97.297L44.129,98.02L42.863,96.554L39.77,95.189L36.804,91.902L37.165,91.479L39.245,91.796L41.109,89.669L41.289,87.099L37.419,82.999L34.47,81.408L32.625,77.789L30.762,73.959L28.429,69.265ZM325.359,396.358L328.615,395.739L333.661,400.249L335.525,400.071L340.698,403.838L344.641,407.109L347.535,411.157L345.328,413.995L346.721,417.401L344.532,421.22L338.871,424.612L335.163,423.389L332.432,424.042L327.801,421.426L324.382,421.622L321.326,418.261L321.705,414.361L322.809,413.02L322.755,407.089L324.093,401.032ZM346.721,417.401L345.328,413.995L347.535,411.157L344.641,407.109L340.698,403.838L335.525,400.071L333.661,400.249L328.615,395.739L325.359,396.358L332.052,388.48L337.731,382.942L341.096,380.628L345.328,377.511L345.437,373.025L342.922,369.803L340.426,370.878L341.403,367.667L342.09,364.386L342.09,361.354L340.282,360.358L338.401,361.251L336.537,361.009L335.941,358.891L335.47,353.889L334.53,352.259L331.147,350.789L329.085,351.855L323.786,350.817L324.111,343.491L322.628,340.505L324.202,339.4L323.713,336.356L325.106,334.024L325.992,329.853L324.798,326.574L322.067,325.094L321.525,323.022L322.266,319.987L312.625,319.774L310.69,313.697L312.155,313.609L312.101,311.366L311.106,309.855L310.889,306.857L307.977,305.325L304.811,305.378L302.731,303.874L299.331,302.853L297.359,300.934L291.734,300.08L286.271,295.481L286.687,292.048L286.072,290.083L286.597,286.256L280.031,287.119L277.372,289.037L272.977,291.104L271.855,292.654L269.269,292.767L265.543,292.334L262.703,293.217L260.424,292.628L260.749,284.867L256.625,287.87L252.194,287.741L250.295,285.023L246.966,284.729L248.034,282.541L245.23,279.452L243.15,274.884L244.47,273.958L244.47,271.815L247.509,270.351L247.003,267.621L248.287,265.86L248.649,263.51L254.401,260.079L258.506,259.107L259.176,258.348L263.716,258.586L265.977,244.791L266.085,242.613L265.307,239.73L263.083,237.901L263.101,234.245L265.922,233.42L266.935,233.938L267.098,232.016L264.168,231.497L264.096,228.35L273.881,228.461L275.545,226.733L276.938,228.324L277.933,231.293L278.873,230.672L281.641,233.326L285.548,233.003L286.525,231.463L290.251,230.29L292.331,229.464L292.91,227.338L296.491,225.908L296.22,224.853L291.969,224.418L291.264,221.251L291.481,217.877L289.22,216.573L290.16,216.104L293.886,216.752L297.884,218.014L299.331,216.82L302.948,216.036L308.556,214.151L310.401,212.231L309.731,210.806L312.354,210.584L313.512,211.745L312.86,213.955L314.597,214.723L315.736,217.059L314.344,218.84L313.548,223.116L314.832,225.661L315.194,227.993L318.287,230.349L320.765,230.596L321.307,229.609L322.899,229.396L325.178,228.512L326.806,227.176L329.592,227.601L330.804,227.423L333.535,227.831L333.987,226.81L333.155,225.806L333.661,224.35L335.687,224.801L338.057,224.282L340.933,225.346L343.121,226.384L344.677,225.023L345.798,225.236L346.486,226.648L348.891,226.291L350.827,224.384L352.364,220.672L355.331,216.07L357.049,215.831L358.297,218.619L361.101,227.414L363.796,228.239L363.922,231.71L360.16,235.852L361.716,237.366L370.597,238.148L370.778,243.191L374.594,239.891L380.907,241.694L389.264,244.765L391.705,247.709L390.891,250.492L396.734,248.943L406.501,251.608L414.008,251.412L421.442,255.577L427.863,261.222L431.734,262.674L436.021,262.878L437.848,264.467L439.548,270.899L440.38,273.966L438.39,282.36L435.822,285.678L428.749,292.784L425.548,298.583L421.822,303.054L420.574,303.15L419.163,306.953L419.525,316.687L418.132,324.756L417.589,328.234L415.997,330.318L415.111,337.421L410.01,344.41L409.16,349.982L405.09,352.333L403.915,355.604L398.452,355.586L390.548,357.686L387.021,360.126L381.395,361.736L375.481,366.128L371.23,371.643L370.488,375.825L371.32,378.934L370.398,384.667L369.258,387.461L365.731,390.62L360.16,400.844L355.747,405.506L352.328,408.284L350.031,413.965ZM265.543,292.334L269.269,292.767L271.855,292.654L272.977,291.104L277.372,289.037L280.031,287.119L286.597,286.256L286.072,290.083L286.687,292.048L286.271,295.481L291.734,300.08L297.359,300.934L299.331,302.853L302.731,303.874L304.811,305.378L307.977,305.325L310.889,306.857L311.106,309.855L312.101,311.366L312.155,313.609L310.69,313.697L312.625,319.774L322.266,319.987L321.525,323.022L322.067,325.094L324.798,326.574L325.992,329.853L325.106,334.024L323.713,336.356L324.202,339.4L322.628,340.505L322.556,338.857L317.871,336.131L313.204,336.05L304.45,337.602L302.044,342.31L301.917,345.202L299.928,351.68L299.114,350.514L293.398,350.294L291.426,354.663L288.478,350.734L281.894,349.414L277.716,354.322L274.098,355.069L272.127,347.593L269.413,341.556L271.005,336.383L268.364,334.132L267.695,330.309L265.235,326.717L268.401,321.042L266.248,316.652L267.388,314.896L266.501,312.967L268.455,310.373L268.563,305.964L268.798,302.338L269.884,300.594ZM263.716,258.586L259.176,258.348L258.506,259.107L254.401,260.079L248.649,263.51L248.287,265.86L247.003,267.621L247.509,270.351L244.47,271.815L244.47,273.958L243.15,274.884L245.23,279.452L248.034,282.541L246.966,284.729L250.295,285.023L252.194,287.741L256.625,287.87L260.749,284.867L260.424,292.628L262.703,293.217L265.543,292.334L269.884,300.594L268.798,302.338L268.563,305.964L268.455,310.373L266.501,312.967L267.388,314.896L266.248,316.652L268.401,321.042L265.235,326.717L263.897,329.423L261.31,330.775L256.264,327.734L255.829,325.575L245.863,320.306L236.855,314.596L232.984,311.383L230.904,307.102L231.736,305.614L227.468,298.853L222.512,289.4L217.773,279.254L215.711,276.944L214.137,273.212L210.23,269.905L206.649,267.861L208.276,265.603L205.853,260.796L207.408,257.265L211.406,254.086L212.003,256.182L210.574,257.384L210.718,259.226L212.78,258.825L214.824,259.371L216.922,261.914L219.762,259.84L220.721,256.446L223.796,252.067L229.837,250.084L235.318,244.816L236.873,241.55L236.186,237.731L237.525,237.255L240.853,239.636L242.463,242.009L244.796,243.302L247.744,248.577L251.488,249.207L254.256,247.871L256.083,248.747L259.085,248.313L262.938,250.662L259.7,255.79L261.202,255.909ZM278.873,230.672L277.933,231.293L276.938,228.324L275.545,226.733L273.881,228.461L264.096,228.35L264.168,231.497L267.098,232.016L266.935,233.938L265.922,233.42L263.101,234.245L263.083,237.901L265.307,239.73L266.085,242.613L265.977,244.791L263.716,258.586L261.202,255.909L259.7,255.79L262.938,250.662L259.085,248.313L256.083,248.747L254.256,247.871L251.488,249.207L247.744,248.577L244.796,243.302L242.463,242.009L240.853,239.636L237.525,237.255L236.186,237.731L234.034,236.541L231.556,234.882L230.127,235.682L225.876,234.984L224.646,232.816L223.705,232.901L218.677,230.026L218.008,228.469L219.871,228.095L219.654,225.576L220.829,223.754L223.326,223.414L225.442,220.255L227.359,217.613L225.514,216.411L226.455,213.486L225.333,208.875L226.401,207.55L225.605,203.273L223.579,200.574L224.23,198.113L225.84,198.482L226.78,196.971L225.623,193.981L226.238,193.241L228.824,193.396L232.605,189.849L234.667,189.306L234.721,187.624L235.643,183.304L238.519,180.931L241.685,180.836L242.083,179.769L246.026,180.194L249.969,177.608L251.941,176.461L254.364,173.982L256.137,174.295L257.457,175.653L256.481,177.382L253.261,178.242L251.977,180.801L250.041,182.265L248.576,184.169L247.961,187.814L246.568,190.788L249.173,191.132L249.806,193.465L250.928,194.583L251.307,196.627L250.711,198.507L250.891,199.562L252.14,199.983L253.333,201.757L259.791,201.268L262.703,201.911L266.248,206.259L268.274,205.72L271.891,205.994L274.749,205.412L276.54,206.285L275.636,209.003L274.514,210.703L274.116,214.313L275.129,217.664L276.558,219.156L276.721,220.289L274.189,222.792L275.997,223.899L277.336,225.661ZM226.238,193.241L225.623,193.981L226.78,196.971L225.84,198.482L224.23,198.113L223.579,200.574L221.897,199.116L220.829,196.378L222.059,195.021L220.793,194.677L219.853,192.992L217.357,191.58L215.15,191.907L214.137,193.671L212.111,194.952L211.008,195.124L210.519,196.181L212.907,198.936L211.55,199.588L210.827,200.334L208.475,200.591L207.607,197.563L206.956,198.43L205.292,198.13L204.279,196.086L202.217,195.751L200.915,195.158L198.762,195.167L198.618,196.267L198.039,195.502L198.292,194.497L198.708,193.465L198.527,192.544L199.269,191.942L198.22,191.184L198.202,189.133L200.137,188.676L201.946,190.504L201.837,191.589L203.845,191.813L204.315,191.399L205.708,192.647L208.168,192.286L210.32,190.995L213.359,189.969L215.078,188.452L217.845,188.745L217.664,189.245L220.468,189.426L222.711,190.305L224.339,191.83ZM200.137,188.676L198.202,189.133L198.22,191.184L199.269,191.942L198.527,192.544L198.708,193.465L198.292,194.497L198.039,195.502L195.307,194.376L194.295,193.31L194.873,192.424L194.674,191.305L193.282,190.081L191.31,189.082L189.592,188.426L189.248,186.933L187.928,186.027L188.253,187.512L187.258,188.728L186.101,187.313L184.491,186.812L183.804,185.776L183.84,184.229L184.491,182.611L183.08,181.893L184.238,180.905L184.997,180.246L188.307,181.598L189.447,180.931L191.057,181.364L191.889,182.412L193.372,182.758L194.566,181.667L195.832,184.445L197.786,186.502ZM194.566,181.667L193.372,182.758L191.889,182.412L191.057,181.364L189.447,180.931L188.307,181.598L184.997,180.246L184.238,180.905L182.501,179.292L180.15,177.226L179.047,175.487L176.93,173.877L174.398,171.55L174.959,170.756L175.791,171.524L176.171,171.166L177.726,170.948L178.359,169.769L179.101,169.725L178.992,167.189L180.168,167.066L181.217,167.101L182.302,165.717L183.786,166.768L184.31,166.12L185.233,165.507L186.987,164.077L187.059,163.014L187.548,163.058L188.199,161.818L188.724,161.669L189.574,162.46L190.587,162.698L191.69,162.03L192.956,162.03L194.711,161.352L195.398,160.639L197.116,160.745L196.682,161.247L196.429,162.408L196.953,164.305L195.796,166.076L195.253,168.151L195.09,170.433L195.362,171.759L195.488,174.078L194.711,174.582L194.24,176.783L194.584,178.138L193.571,179.448L193.788,180.827ZM197.116,160.745L195.398,160.639L194.711,161.352L192.956,162.03L191.69,162.03L190.587,162.698L189.574,162.46L188.724,161.669L188.199,161.818L187.548,163.058L187.059,163.014L186.987,164.077L185.233,165.507L184.31,166.12L183.786,166.768L182.302,165.717L181.217,167.101L180.168,167.066L178.992,167.189L179.101,169.725L178.359,169.769L177.726,170.948L176.171,171.166L175.302,169.55L173.783,169.105L174.127,167.031L173.439,166.471L172.408,166.103L170.202,166.716L170.021,166.024L168.501,165.191L167.416,164.156L165.933,163.717L166.982,162.399L166.584,161.379L166.946,160.384L169.315,158.921L171.612,156.935L172.137,157.138L173.24,156.219L174.669,156.148L175.14,156.573L175.917,156.316L178.251,156.785L180.566,156.652L182.194,156.069L182.773,155.485L184.382,155.759L185.576,156.113L186.897,155.989L187.891,155.538L190.189,156.263L190.984,156.378L192.522,157.35L193.969,158.515L195.796,159.318ZM165.933,163.717L167.416,164.156L168.501,165.191L170.021,166.024L170.202,166.716L172.408,166.103L173.439,166.471L174.127,167.031L173.783,169.105L173.222,170.319L170.31,170.24L168.501,169.743L166.421,168.72L163.636,168.396L162.207,167.285L162.37,166.532L164.088,165.226L165.028,164.647L164.757,164.042ZM151.499,163.119L151.625,161.607L152.204,160.393L151.499,159.415L153.904,155.167L160.362,155.149L160.488,153.369L159.674,153.049L159.114,151.914L157.251,150.706L155.388,148.944L157.649,148.935L157.667,145.965L162.351,145.956L167,146.019L166.964,150.19L166.566,156.104L168.067,156.104L169.695,157.05L170.129,156.272L171.612,156.935L169.315,158.921L166.946,160.384L166.584,161.379L166.982,162.399L165.933,163.717L164.757,164.042L165.028,164.647L164.088,165.226L162.37,166.532L162.207,167.285L159.638,166.383L156.491,166.287L154.194,165.261ZM167,146.019L166.964,145.241L167.561,145L168.483,145.626L170.274,142.43L171.233,142.358L171.251,143.138L172.209,143.165L172.119,144.598L171.305,146.885L171.739,147.697L171.214,149.585L171.54,150.083L170.961,152.739L169.966,154.122L169.062,154.29L168.067,156.104L166.566,156.104L166.964,150.19ZM309.731,210.806L310.401,212.231L308.556,214.151L302.948,216.036L299.331,216.82L297.884,218.014L293.886,216.752L290.16,216.104L289.22,216.573L291.481,217.877L291.264,221.251L291.969,224.418L296.22,224.853L296.491,225.908L292.91,227.338L292.331,229.464L290.251,230.29L286.525,231.463L285.548,233.003L281.641,233.326L278.873,230.672L277.336,225.661L275.997,223.899L274.189,222.792L276.721,220.289L276.558,219.156L275.129,217.664L274.116,214.313L274.514,210.703L275.636,209.003L276.54,206.285L274.749,205.412L271.891,205.994L268.274,205.72L266.248,206.259L262.703,201.911L259.791,201.268L253.333,201.757L252.14,199.983L250.891,199.562L250.711,198.507L251.307,196.627L250.928,194.583L249.806,193.465L249.173,191.132L246.568,190.788L247.961,187.814L248.576,184.169L250.041,182.265L251.977,180.801L253.261,178.242L256.481,177.382L256.336,178.589L253.388,179.188L255.034,181.511L254.979,184.186L252.755,187.158L254.654,191.193L256.824,190.865L257.946,187.184L256.39,185.387L256.137,181.52L262.395,179.431L261.708,177.018L263.463,175.4L265.271,179.006L268.798,179.084L272.054,181.945L272.253,183.632L276.757,183.684L282.129,183.156L285.005,185.439L288.858,186.078L291.661,184.48L291.734,183.191L297.956,182.888L303.979,182.81L299.711,184.324L301.429,186.735L305.444,187.115L309.243,189.625L310.057,193.697L312.661,193.585L314.633,194.78L310.654,197.761L310.22,199.605L311.938,201.491L310.69,202.434L307.597,203.247L307.687,205.584L306.331,206.978ZM330.804,227.423L329.592,227.601L326.806,227.176L325.178,228.512L322.899,229.396L321.307,229.609L320.765,230.596L318.287,230.349L315.194,227.993L314.832,225.661L313.548,223.116L314.344,218.84L315.736,217.059L314.597,214.723L312.86,213.955L313.512,211.745L312.354,210.584L309.731,210.806L306.331,206.978L307.687,205.584L307.597,203.247L310.69,202.434L311.938,201.491L310.22,199.605L310.654,197.761L314.633,194.78L317.943,196.645L321.036,199.948L321.181,202.553L323.08,202.673L325.775,205.147L327.747,206.901L326.951,211.446L323.894,212.76L324.165,213.947L323.243,216.548L325.468,220.203L327.078,220.212L327.747,223.048ZM340.933,225.346L338.057,224.282L335.687,224.801L333.661,224.35L333.155,225.806L333.987,226.81L333.535,227.831L330.804,227.423L327.747,223.048L327.078,220.212L325.468,220.203L323.243,216.548L324.165,213.947L323.894,212.76L326.951,211.446L327.747,206.901L333.77,207.918L334.313,207.003L338.382,206.636L343.773,207.995L341.168,212.334L341.566,215.78L343.537,218.772L342.651,220.936L342.217,223.235ZM236.186,237.731L236.873,241.55L235.318,244.816L229.837,250.084L223.796,252.067L220.721,256.446L219.762,259.84L216.922,261.914L214.824,259.371L212.78,258.825L210.718,259.226L210.574,257.384L212.003,256.182L211.406,254.086L214.083,250.322L212.997,248.126L211.08,250.467L208.078,248.262L209.09,246.841L208.24,242.281L209.995,241.524L210.935,238.395L212.835,235.154L212.473,233.105L215.24,232.033L218.677,230.026L223.705,232.901L224.646,232.816L225.876,234.984L230.127,235.682L231.556,234.882L234.034,236.541ZM225.152,142.412L228.535,142.887L231.194,144.159L232.026,145.599L228.499,145.697L226.979,146.581L224.158,145.733L221.282,143.81L221.897,142.6L223.995,142.233ZM201.53,117.143L205.871,117.532L209.832,117.597L214.553,119.453L216.543,121.442L221.245,120.835L223.018,122.104L227.269,125.46L230.398,127.9L232.062,127.827L235.047,128.921L234.685,130.44L238.393,130.659L242.191,132.856L241.594,134.106L238.248,134.784L234.866,135.047L231.411,134.631L224.212,135.146L227.576,132.166L225.532,130.768L222.295,130.413L220.558,128.857L219.364,125.79L216.525,126L211.84,124.545L210.339,123.408L203.791,122.573L202.036,121.516L203.917,120.153L198.979,119.877L195.38,122.701L193.3,122.775L192.576,124.096L190.08,124.691L187.946,124.178L190.587,122.499L191.672,120.54L193.951,119.333L196.519,118.262L200.318,117.745ZM322.628,340.505L324.111,343.491L323.786,350.817L329.085,351.855L331.147,350.789L334.53,352.259L335.47,353.889L335.941,358.891L336.537,361.009L338.401,361.251L340.282,360.358L342.09,361.354L342.09,364.386L341.403,367.667L340.426,370.878L339.612,375.815L335.054,380.139L331.075,381.05L325.432,380.178L320.367,378.647L325.305,370.123L324.581,367.667L319.408,365.5L313.276,361.419L309.171,360.591L299.928,351.68L301.917,345.202L302.044,342.31L304.45,337.602L313.204,336.05L317.871,336.131L322.556,338.857Z" fill="color-mix(in srgb, var(--gray-lt) 55%, transparent)" stroke="var(--off-wh)" stroke-width="0.6"/>
+                  <path d="M65.817,378.735L65.039,378.912L65.075,378.598L65.274,378.334L65.835,378.49L66.106,378.52ZM218.948,416.669L218.044,416.795L218.008,416.764L218.062,416.659L218.261,416.47L218.514,416.251L218.568,416.24L218.659,416.261L218.767,416.303L219.039,416.45L219.111,416.554L219.093,416.638ZM261.075,330.759L261.274,330.695L261.762,330.649L262.251,330.649L262.884,330.429L263.553,330.025L263.987,329.428L264.168,328.878L264.168,328.401L263.969,327.796L263.915,327.366L264.15,327.164L264.765,327.082L265.253,326.679L265.633,326.322L265.724,326.926L266.411,327.723L266.628,328.63L266.791,328.749L267.731,329.199L267.749,329.309L267.605,329.474L267.478,329.694L267.568,330.006L267.731,330.429L267.804,330.815L267.894,331.219L268.003,331.844L268.075,332.406L268.31,333.235L268.364,333.751L268.364,334.064L268.545,334.369L268.907,334.729L269.413,335.089L269.811,335.523L270.101,335.809L270.481,336.05L270.752,336.262L270.86,336.41L270.897,336.53L270.788,336.651L270.336,337.215L269.721,338.067L269.721,338.178L270.318,338.79L270.408,339.041L270.408,339.384L270.209,339.802L269.576,339.932L269.432,340.043L269.413,340.182L269.558,340.359L269.54,340.768L269.775,341.223L269.649,341.372L269.413,341.586L269.413,341.791L269.486,342.014L269.739,342.201L270.716,342.843L270.788,342.927L270.77,342.992L270.39,343.421L270.354,343.682L270.372,344.121L270.426,344.401L270.553,344.513L271.041,344.644L271.656,345.625L272.235,346.542L272.235,347.338L272.289,348.257L272.669,348.989L272.724,349.572L272.832,350.23L273.284,350.634L273.465,351.435L273.501,351.859L273.483,352.132L273.827,353L273.863,353.746L273.773,354.285L273.791,354.588L273.827,354.796L274.134,354.985L274.261,355.108L274.695,355.156L275.328,355.175L276.432,354.976L277.264,354.787L278.204,355.771L277.806,357.099L277.155,359.229L276.649,360.887L276.558,361.107L276.468,361.431L275.382,361.9L273.791,362.578L272.995,362.942L271.964,363.402L271.729,363.775L271.421,363.986L271.096,364.245L270.987,364.533L270.68,364.715L270.408,365.368L270.408,365.867L270.571,366.204L270.879,366.348L270.987,366.762L271.078,367.05L271.295,367.272L271.24,367.455L271.059,367.59L270.734,367.667L270.517,368.081L270.245,369.095L270.209,369.462L270.499,370.39L270.661,370.884L271.078,372.697L271.15,373.192L270.571,373.883L270.336,374.301L270.245,374.671L270.245,374.963L270.3,375.236L270.788,376.085L271.349,376.856L271.62,377.257L271.62,377.795L271.494,378.099L271.186,378.216L270.535,378.422L270.245,378.735L269.956,378.784L269.667,378.539L269.359,378.598L268.979,378.814L268.835,379.334L268.491,380.237L268.202,380.483L267.984,381.171L267.605,382.156L267.424,382.747L267.333,383.181L266.935,383.458L266.483,384.011L266.14,384.555L266.013,384.704L265.742,384.753L265.561,385.238L264.91,385.972L264.747,386.815L264.512,387.272L264.475,388.088L264.114,389.592L264.041,389.922L263.68,390.181L263.191,390.761L263.047,391.191L263.264,392.473L263.535,393.758L263.553,394.371L263.444,395.196L263.372,395.559L263.553,395.7L263.86,395.801L263.969,396.114L263.734,396.336L263.643,396.74L263.39,397.184L262.667,397.356L262.413,397.194L262.323,397.346L262.359,397.659L262.196,398.034L261.817,399.047L261.581,399.961L261.437,400.357L261.491,400.692L261.618,400.886L261.618,401.069L261.419,401.283L261.22,401.639L261.021,401.69L260.804,401.588L260.568,401.802L260.514,402.241L260.388,402.792L260.333,403.446L260.243,404.274L260.532,404.848L260.912,405.884L261.202,406.14L261.509,406.12L261.762,406.325L261.907,406.572L261.708,407.004L261.382,407.076L261.346,407.323L261.455,407.869L261.563,408.405L261.889,408.663L262.016,409.386L262.323,409.624L262.287,410.545L262.594,411.633L262.92,411.945L263.065,412.09L262.974,412.568L262.703,412.942L262.649,413.546L262.757,413.994L263.083,414.411L263.336,414.453L263.698,414.286L264.078,414.484L264.132,414.85L264.186,415.173L263.987,415.602L263.77,416.397L263.716,417.183L263.77,418.38L263.879,419.317L263.897,419.907L263.915,420.17L263.788,420.35L263.444,420.445L263.155,420.487L262.92,420.635L262.866,420.93L262.667,421.427L262.468,421.797L262.124,422.337L261.907,422.899L261.726,423.271L261.744,423.525L261.618,424.014L261.473,424.429L261.202,425.803L260.84,426.091L260.532,426.23L260.388,426.422L260.496,426.796L260.822,426.903L260.93,427.213L260.876,427.684L261.093,428.123L261.075,428.659L261.274,429.658L261.093,430.325L261.147,430.896L261.147,431.457L260.876,431.899L260.351,431.986L260.062,432.396L259.556,432.84L259.501,433.197L259.411,433.522L259.212,433.641L258.886,433.641L258.633,433.695L258.271,434.107L257.873,434.335L257.783,434.683L257.819,435.096L257.62,435.346L257.349,435.824L257.186,436.347L257.349,436.827L257.53,437.679L257.566,438.051L257.331,438.762L257.15,439.222L257.331,439.804L257.475,440.133L257.331,440.859L257.222,441.31L257.313,442.148L257.674,443.087L258.018,443.917L258.054,444.892L258.145,445.67L258.307,446.516L258.651,446.839L258.922,447.128L258.868,447.53L258.669,448.021L258.398,448.39L257.711,448.513L257.168,448.849L256.716,449.084L256.372,449.364L256.137,449.656L256.01,449.981L256.101,451.408L256.047,451.938L255.811,452.693L255.594,453.292L255.504,453.473L255.486,453.744L255.45,453.993L255.196,454.05L254.871,453.937L254.672,454.005L254.527,454.208L254.654,454.673L254.78,455.501L254.943,455.854L254.907,456.127L254.835,456.73L254.618,457.208L254.31,457.208L254.129,457.414L254.039,457.756L254.129,458.202L254.527,458.556L254.654,458.796L254.599,459.105L254.292,459.231L254.111,459.483L253.948,460.045L253.713,460.677L253.478,461.148L253.424,461.793L253.767,462.485L253.731,463.166L253.695,465.146L253.677,465.82L253.767,466.95L253.641,467.253L253.568,467.544L253.912,468.374L254.292,469.698L254.382,470.226L254.328,470.59L253.822,470.908L253.406,471.037L253.171,470.814L252.99,470.908L252.809,471.296L252.592,471.614L252.501,471.932L252.736,472.333L252.863,473.113L252.592,473.456L252.411,473.823L252.483,474.309L252.556,475.188L252.393,476.652L252.61,477.177L252.863,477.428L253.641,477.726L254.22,477.87L254.382,478.36L254.31,478.756L254.039,478.948L253.605,479.115L253.605,479.752L253.966,480.365L254.382,480.798L254.473,481.184L254.455,481.594L254.165,481.932L254.563,482.657L254.744,483.153L254.563,483.541L254.292,484.111L254.075,484.39L254.075,484.706L253.984,485.339L253.966,485.96L254.039,486.338L256.517,486.631L257.078,486.741L257.403,487.12L257.349,487.585L257.041,488.075L256.842,489.007L256.354,489.167L255.866,488.922L255.341,489.007L254.871,489.069L254.22,489.093L253.351,489.216L252.809,489.081L252.773,489.425L252.917,490.016L254.075,490.201L255.16,490.546L255.486,491.175L255.92,491.892L256.372,492.338L256.39,493.057L255.685,493.814L255.594,494.349L254.672,494.511L254.401,494.822L254.274,495.871L254.382,496.696L254.744,496.984L254.979,497.523L254.708,498.164L254.093,498.604L253.749,499.019L253.966,499.359L254.238,499.889L254.328,500.179L254.473,500.963L254.654,502.065L254.636,502.599L254.473,503.006L253.858,503.629L253.424,503.922L253.351,504.701L253.315,505.276L253.351,505.801L253.623,506.224L253.605,506.647L253.243,506.737L252.917,506.943L252.61,507.689L251.705,508.462L251.398,508.81L251.416,509.404L251.054,510.246L250.765,510.985L250.53,511.673L250.566,512.402L251.072,512.715L251.488,513.42L251.651,514.322L251.344,515.358L250.62,515.752L250.204,516.186L250.078,516.515L250.186,517.61L250.15,518.112L250.041,518.601L249.86,518.972L249.463,519.383L248.775,519.755L248.196,520.007L247.943,520.287L247.636,520.925L247.364,521.619L247.419,522.487L245.791,522.594L245.682,523.237L245.32,523.747L245.212,524.674L245.574,525.563L245.736,526.319L245.447,527.225L245.556,528.161L245.592,528.895L246.171,529.726L246.532,530.763L246.731,531.626L246.84,532.311L246.984,532.724L247.22,533.191L247.328,533.728L247.69,533.908L248.323,533.398L248.775,533.054L249.083,532.93L250.005,533.012L250.566,532.696L250.819,532.737L251.163,532.916L251.416,533.288L251.615,534.142L251.742,535.095L251.579,536.079L251.326,536.301L251.235,536.578L251.326,537.176L251.615,537.608L251.597,538.207L251.289,539.59L251.072,540.165L251.452,540.811L251.778,541.373L252.447,541.81L252.99,542.416L253.37,542.91L253.279,543.603L253.532,543.801L254.545,543.815L256.065,543.844L258.434,543.872L260.749,543.915L263.372,543.957L264.62,544.51L265.742,545.007L267.171,545.007L268.581,545.59L269.63,545.975L270.264,546.132L270.915,546.274L271.005,546.816L268.165,546.046L267.532,545.619L266.99,545.576L265.959,546.089L265.38,547.345L265.09,547.703L264.367,548.032L263.643,548.104L261.22,549.324L260.351,549.425L259.755,549.756L259.176,550.217L258.959,551.228L259.049,551.835L258.398,554.043L258.235,555.269L258.235,555.913L258.416,556.94L258.181,558.707L257.729,559.091L256.661,559.593L255.92,559.238L254.672,558.913L253.767,558.235L252.628,557.748L252.248,557.454L251.235,556.103L251.127,555.649L251.054,555.079L251.597,554.262L251.886,554.203L252.718,554.233L253.424,554.101L253.876,554.539L253.984,555.488L253.804,555.986L253.623,556.309L253.677,556.543L254.183,556.206L254.437,554.087L256.137,553.039L256.698,552.429L257.24,551.473L257.331,551.213L257.367,550.852L257.005,550.563L256.209,550.174L253.641,552.154L252.483,552.676L251.724,553.243L250.819,554.276L250.656,554.583L250.457,555.254L250.367,556.015L249.481,555.664L248.106,554.583L247.835,554.174L248.106,553.621L248.522,553.17L248.558,551.618L248.667,551.069L248.956,550.635L249.481,550.159L249.734,550.058L249.951,550.26L249.987,550.621L250.855,550.592L252.537,549.238L253.225,549.195L254.147,549.511L255.178,549.324L255.377,549.181L255.576,548.864L254.817,548.491L254.075,548.305L251.995,548.161L251.543,548.305L250.928,549.037L250.729,548.85L250.602,548.491L249.897,548.233L249.553,548.29L249.227,548.635L249.282,549.166L249.101,549.756L248.45,550.318L247.997,551.242L248.016,551.951L247.997,552.328L247.835,552.531L247.491,552.763L246.406,552.604L245.791,551.85L245.556,551.343L244.868,550.78L246.37,550.102L246.894,549.713L247.382,548.836L247.744,548.276L247.491,547.889L247.183,547.889L247.202,548.506L246.876,549.022L246.189,548.778L245.158,549.526L244.525,549.324L243.512,549.554L243.005,549.152L242.897,548.635L243.078,548.09L242.897,547.188L242.607,546.974L242.318,547.031L242.191,546.488L241.884,545.548L241.739,545.291L241.594,544.851L241.757,544.751L242.101,544.865L242.408,545.149L242.879,545.192L243.91,545.804L244.344,545.661L244.579,545.519L244.669,545.007L244.669,544.524L244.85,544.524L245.429,545.135L245.809,545.078L246.46,545.249L246.804,545.178L247.419,544.95L248.395,544.269L248.884,543.575L249.137,543.476L249.426,543.56L249.643,543.773L249.643,544.255L249.86,544.709L250.168,545.078L250.258,545.519L250.204,545.975L249.643,546.588L249.535,546.816L249.734,547.045L249.951,546.931L250.276,546.631L250.457,546.203L250.494,545.975L250.512,545.661L250.494,545.277L250.041,544.198L249.987,543.943L249.987,543.447L250.494,542.995L250.638,542.642L250.674,541.965L250.403,541.5L249.3,540.418L247.473,539.353L247.256,539.464L247.111,539.66L247.292,539.801L247.527,539.871L249.155,540.754L249.589,541.275L249.86,541.415L250.204,541.753L250.114,542.261L248.468,542.74L247.165,543.815L246.171,544.468L245.501,544.226L245.176,543.56L244.832,542.712L244.326,542.218L244.036,542.275L243.801,542.176L243.602,541.922L243.222,542.134L242.336,541.542L242.101,541.289L242.734,540.474L243.439,540.783L243.602,538.472L243.385,537.956L242.463,537.385L242.028,537.454L241.413,537.385L240.997,537.12L240.527,537.009L240.129,536.856L239.605,536.509L238.99,536.315L238.14,534.874L237.778,534.114L237.579,533.288L238.881,533.26L239.641,533.122L239.822,532.779L239.55,532.133L239.189,531.612L239.46,531.119L239.84,530.75L240.238,530.914L241.251,531.749L241.413,532.311L242.119,534.045L242.3,534.211L242.372,534.363L243.855,535.344L244.054,535.33L243.964,534.515L244.38,533.398L244.796,533.04L244.995,533.04L245.013,532.861L244.615,532.394L244.814,531.79L244.687,531.776L244.344,532.16L243.62,534.087L243.186,534.446L242.589,533.563L242.264,532.944L242.083,532.71L242.155,531.735L243.331,531.927L242.933,531.612L241.54,531.037L241.196,530.763L240.943,530.668L240.491,529.998L239.912,529.439L240.907,528.432L241.395,527.727L242.987,528.093L243.295,527.876L243.023,527.361L242.716,527.523L242.227,527.198L241.45,526.224L241.486,525.738L241.612,524.835L241.92,524.647L242.571,524.459L243.313,524.755L243.62,524.983L243.91,524.876L243.62,524.217L243.132,523.961L242.607,523.492L242.661,522.969L242.824,522.527L242.969,522.059L243.059,521.392L243.005,520.872L243.15,520.646L243.385,520.539L243.403,520.34L242.933,520.38L242.77,521.032L242.716,521.632L242.372,522.1L242.245,522.648L242.155,523.291L241.974,524.029L241.558,523.747L241.323,523.465L241.233,523.264L241.287,522.889L241.178,520.553L241.16,518.601L241.359,517.095L241.938,516.502L242.191,516.331L242.426,516.41L242.788,516.397L243.041,516.186L242.227,515.818L241.721,516.028L241.359,516.318L240.69,516.094L240.563,515.332L240.183,514.663L240.111,513.812L240.147,512.598L241.07,512.702L241.829,512.937L243.819,512.911L245.447,514.087L246.171,513.93L246.134,513.694L245.592,513.407L245.248,512.741L245.049,512.559L244.941,512.155L244.922,511.699L244.506,510.025L244.344,510.064L244.181,510.635L243.855,511.595L243.385,512.064L242.661,512.259L241.938,512.363L241.323,512.181L241.178,511.777L241.196,511.322L240.925,511.102L240.22,510.894L240.021,510.79L239.786,510.375L240.129,509.741L240.401,509.366L240.726,509.443L241.052,509.611L241.468,510.103L241.866,510.194L242.318,509.805L242.408,509.534L242.119,509.366L241.866,509.301L241.45,509.094L240.654,508.346L241.052,507.586L241.992,506.712L242.282,506.506L242.028,505.775L242.318,504.969L242.028,504.318L241.504,503.604L240.798,503.451L240.654,503.655L240.618,503.948L240.726,504.165L240.672,504.318L240.509,504.318L239.605,504.165L239.008,503.693L238.031,503.26L237.904,502.929L237.796,502.434L238.14,501.583L237.959,501.571L237.326,502.23L236.367,502.573L235.643,502.688L235.336,502.942L235.209,503.171L235.408,503.298L235.806,503.324L236.114,504.152L236.041,504.471L235.897,504.675L235.553,504.726L234.866,504.152L234.504,503.502L234.504,502.993L234.757,502.307L235.86,501.368L236.168,500.976L236.819,500.546L237.687,499.561L238.429,499.019L238.067,498.566L237.687,497.9L237.724,496.959L239.243,496.583L239.912,496.746L240.762,496.709L241.233,496.483L241.558,496.446L242.282,496.183L242.589,495.821L242.661,495.546L242.661,495.296L242.589,495.009L242.463,494.237L242.589,493.976L242.897,493.678L243.295,493.578L243.475,493.603L243.964,493.877L243.855,494.275L243.674,494.76L243.276,496.671L243.078,497.109L242.77,497.486L242.987,498.264L242.661,498.818L241.287,499.41L241.106,499.435L241.214,499.649L242.01,499.599L242.625,499.473L243.24,498.981L243.439,498.226L243.693,496.759L244.018,496.546L244.416,496.508L244.615,496.846L244.543,497.624L244.543,498.377L244.036,500.596L243.403,501.495L243.331,501.736L243.367,502.015L243.855,501.977L244.235,501.495L244.506,500.874L244.778,500.015L244.742,499.397L244.832,499.019L244.941,497.762L245.14,497.134L245.121,496.246L244.778,495.921L244.307,495.721L244.181,495.184L244.434,494.113L245.339,494.15L246.207,493.417L246.767,493.156L247.093,493.218L248.214,493.914L248.432,493.926L248.395,493.665L248.233,493.491L247.78,493.255L246.966,492.511L245.863,492.387L246.062,491.422L246.279,490.534L246.822,490.423L247.708,490.127L249.408,488.811L249.716,487.818L249.788,486.705L248.974,486.424L248.106,485.692L247.401,485.314L246.767,484.828L246.894,484.111L246.984,482.935L247.762,482.681L248.124,481.087L247.599,479.86L247.726,478.948L248.413,478.181L248.522,477.643L248.721,477.057L249.318,476.998L249.336,476.676L249.282,476.092L248.884,475.402L248.866,474.452L249.245,473.338L249.842,473.409L249.951,473.362L249.535,472.688L249.191,471.944L249.245,471.649L249.571,471.402L249.951,471.261L250.367,471.638L250.964,472.853L251.054,472.534L250.819,471.308L250.62,469.78L249.987,469.979L249.426,469.874L249.209,469.639L248.992,469.287L249.191,468.877L249.39,468.561L249.806,468.175L250.693,468.035L251.326,467.544L251.525,466.53L251.326,466.635L250.982,467.521L250.403,467.825L250.114,467.778L249.77,467.614L249.083,466.833L248.703,466.658L248.341,466.635L248.034,466.833L247.238,468.199L246.894,468.432L245.483,468.538L244.977,468.374L244.416,468.175L244.47,467.836L244.651,467.474L244.959,467.288L244.977,467.089L244.543,467.031L244.036,466.658L243.801,466.181L243.711,465.332L243.258,463.987L243.168,463.027L243.475,462.346L244.163,459.678L244.38,458.316L244.742,457.129L244.742,456.354L245.682,455.638L246.044,455.206L246.858,452.817L246.966,451.532L245.682,447.653L245.483,446.917L245.429,446.004L245.736,444.493L245.773,443.917L245.501,443.087L244.778,441.74L244.76,441.057L245.067,440.353L244.778,439.475L244.922,438.937L245.085,438.51L246.225,438.74L246.749,438.631L247.021,438.379L247.238,437.668L247.346,436.544L247.419,436.064L247.509,435.367L248.07,435.085L248.269,434.422L248.739,433.511L249.209,430.939L249.698,430.314L250.186,429.583L249.987,428.509L250.313,428.016L250.584,427.652L250.837,426.999L251.181,426.379L252.013,425.494L252.212,424.418L252.845,422.549L252.972,421.364L253.171,420.561L253.116,419.812L253.496,418.906L253.858,418.138L253.984,417.718L254.817,416.701L254.961,415.905L254.654,415.361L254.654,414.516L254.419,413.348L254.961,412.922L255.178,412.599L255.884,410.741L255.829,410.017L256.028,409.117L255.576,408.054L255.504,405.678L255.251,403.844L254.835,401.925L254.871,400.855L254.599,399.524L254.599,398.753L254.798,397.022L256.137,395.932L256.408,394.713L256.571,393.075L256.517,391.882L256.372,391.341L255.721,390.471L255.54,388.904L255.667,388.496L256.227,388.058L256.607,387.451L256.806,386.507L257.222,385.763L257.385,383.972L257.711,382.55L257.891,382.057L258.434,381.437L258.525,381.269L258.615,380.797L258.579,379.687L258.669,379L259.085,377.668L259.14,377.052L259.61,375.675L259.718,374.691L259.935,374.175L259.845,373.591L259.99,372.289L259.664,371.552L259.592,371.126L259.99,369.8L260.279,369.471L260.713,368.853L260.912,368.159L260.948,367.725L260.37,365.541L260.297,364.792L260.424,363.066L260.623,361.957L260.568,361.069L260.623,360.611L260.731,360.038L261.111,359.353L261.202,358.858L261.075,358.658L260.605,358.401L260.225,357.774L260.189,357.156L260.315,356.71L260.351,356.075L260.912,355.952L261.22,355.601L261.509,354.938L261.871,353.34L262.034,351.369L262.251,350.192L262.395,349.6L262.522,348.379L262.739,347.582L262.775,346.851L262.739,346.289L262.196,343.449L262.196,342.405L262.432,340.786L262.432,338.521L262.395,337.993L262.178,337.493L262.124,336.826L261.798,335.652L261.491,333.318L261.491,332.084L261.364,331.035ZM270.065,549.252L270.047,551.719L270.047,554.174L270.028,556.47L270.028,558.795L270.028,561.046L270.01,563.372L269.974,565.999L269.938,567.963L269.196,567.963L268.979,568.16L267.786,568.448L265.76,568.009L265.253,567.6L264.566,566.723L264.331,566.965L263.68,567.343L263.028,567.63L262.486,567.66L261.979,567.297L261.871,567.116L261.762,567.07L260.677,567.585L259.483,567.07L258.525,566.753L257.005,566.572L255.938,565.924L253.966,565.984L253.623,565.773L253.496,565.141L253.605,564.841L254.021,564.676L254.129,564.315L254.563,564.405L255.106,564.871L255.269,564.856L255.63,564.42L256.173,564.031L256.372,563.986L257.349,564.465L257.747,564.405L258.326,564.195L258.416,564.016L258.506,563.686L258.669,563.492L259.176,563.402L259.664,563.581L259.718,564.151L259.646,564.766L260.297,564.931L261.075,564.916L261.618,565.141L261.69,564.766L260.822,563.791L260.46,563.193L259.99,562.834L259.357,562.655L258.85,561.537L258.868,560.556L258.814,559.608L259.935,559.076L259.682,558.264L260.062,557.66L260.514,557.425L260.948,559.682L261.274,560.482L260.858,560.646L260.008,560.631L260.496,561.76L261.274,562.133L261.943,562.968L261.961,563.581L262.323,563.851L263.227,563.866L263.842,563.746L264.132,563.342L264.475,563.207L265.072,563.716L266.103,564.091L266.375,564.345L266.574,564.796L266.574,565.261L266.628,565.502L266.935,565.382L267.351,564.751L267.568,564.525L267.822,564.42L267.966,564.27L267.984,564.091L267.225,563.626L263.245,561.522L262.739,560.69L262.413,559.638L262.432,558.559L262.721,558.22L263.426,557.793L264.729,557.189L266.248,556.338L266.429,556.177L266.411,555.635L266.23,555.269L265.633,555.006L265,554.948L264.403,554.962L263.806,555.079L262.721,555.649L262.106,555.62L261.527,555.313L261.093,554.699L260.858,553.868L260.858,553.344L260.948,552.865L261.22,552.357L261.563,552.154L261.889,552.183L262.196,552.067L262.377,551.893L262.522,551.662L262.468,551.473L262.359,551.3L261.871,550.953L261.69,550.621L261.274,550.073L261.491,549.929L262.233,549.842L262.739,550.217L263.209,550.65L263.499,550.65L263.77,550.462L264.367,549.914L264.873,549.209L265.326,548.405L265.705,547.918L266.121,547.875L267.37,549.382L267.804,549.439L269.251,548.62L269.413,548.663L269.92,549.08ZM277.842,570.594L277.698,570.93L277.39,571.374L276.956,571.726L276.54,571.818L276.251,571.634L276.088,571.328L276.016,571.007L275.925,570.839L275.762,570.808L275.563,570.808L275.31,570.93L274.786,571.374L274.55,571.496L274.388,571.527L272.868,571.19L272.724,571.053L272.543,570.762L272.344,569.862L271.711,569.071L272.687,568.63L273.863,568.63L276.124,568.965L277.01,569.041L277.716,569.801L277.824,570.259ZM244.217,479.103L243.837,479.247L243.494,479.283L243.132,479.175L242.499,479.187L241.884,478.924L241.305,478.54L241.142,478.313L241.196,478.001L241.63,477.272L242.028,475.889L242.3,473.918L242.083,473.172L242.101,472.865L242.209,472.499L242.245,472.109L242.227,471.732L242.282,471.378L242.716,470.625L242.788,470.285L242.788,469.921L242.987,469.17L242.933,468.924L242.77,468.713L242.897,468.526L244.434,469.076L245.447,469.205L245.501,469.78L245.7,470.226L245.827,471.025L245.972,471.214L245.899,471.791L245.429,472.038L245.465,472.57L245.736,473.066L245.339,473.255L244.922,473.362L244.814,473.492L244.506,473.61L244.145,473.883L244.253,474.131L244.724,474.701L245.248,475.093L245.537,475.675L245.917,476.282L245.736,476.676L245.393,477.225L244.832,477.595L244.344,477.822L244.398,478.732ZM240.69,521.312L240.726,522.447L240.654,523.586L240.455,524.983L240.491,525.266L240.708,525.334L240.78,525.509L240.708,526.251L240.581,526.819L240.346,527.293L240.22,527.849L240.093,527.971L239.55,528.066L239.243,528.011L239.008,527.374L238.935,526.981L238.953,526.467L238.664,525.779L238.646,525.522L238.755,525.064L239.008,524.849L239.044,524.149L239.152,523.948L239.424,523.666L239.46,523.545L239.442,523.438L239.351,523.425L238.248,524.284L238.158,524.526L238.103,524.849L238.085,525.981L237.904,526.643L237.724,526.765L237.217,526.792L236.548,526.724L235.788,526.13L235.3,526.292L235.191,525.563L235.444,524.97L236.367,525.024L236.512,523.988L236.222,523.747L235.897,523.317L235.716,522.942L235.879,522.661L236.421,522.247L236.693,522.206L236.964,522.434L237.615,522.26L237.579,521.605L237,521.312L237.127,520.819L237.868,520.353L238.302,519.875L238.339,519.33L238.158,518.8L238.212,518.588L238.574,518.138L239.098,517.927L239.333,517.953L239.804,518.271L240.238,518.31L240.328,518.403L240.419,518.747ZM235.499,518.376L234.92,518.39L234.793,517.029L235.444,515.069L235.499,514.335L235.282,513.773L235.191,513.315L235.245,513.133L236.096,512.741L236.349,513.159L236.674,514.244L237.271,515.805L237.253,517.306L236.928,517.676L235.879,518.059ZM241.142,551.502L241.233,551.575L241.413,551.56L241.703,551.69L242.752,551.85L243.693,552.241L244.181,552.618L244.814,552.72L245.339,553.199L245.574,553.315L245.845,553.344L246.55,554.218L246.587,554.32L247.382,555.006L247.419,555.108L246.966,555.152L246.044,554.831L245.592,554.816L245.248,554.714L245.176,554.656L245.103,554.262L245.013,554.072L244.127,553.155L243.747,552.952L243.114,552.778L242.39,552.894L241.884,552.778L241.721,552.821L240.997,552.096L240.274,551.488L239.966,550.765L239.514,550.217L239.496,550.058L239.713,549.929L240.202,550.246L240.69,550.78L240.961,550.982ZM240.238,517.069L240.129,517.253L239.514,517.135L238.447,517.332L237.995,516.647L237.796,515.555L237.651,515.319L237.398,514.702L237.253,514.296L236.982,513.668L236.873,513.002L236.819,512.793L237.054,512.402L238.176,512.025L238.574,511.4L238.917,511.478L238.827,512.754L239.026,513.185L239.424,513.551L239.478,513.694L239.55,514.152L239.749,514.846L239.984,515.187L240.057,515.384L240.057,515.555L239.966,515.805ZM248.486,556.191L248.63,556.866L248.703,556.998L249.065,556.896L249.68,556.837L250.711,557.087L250.819,557.175L251.253,557.925L251.597,558.249L252.103,558.943L251.597,559.416L251.289,560.082L251.271,560.423L251.072,560.616L250.765,560.824L250.295,561.225L249.734,561.269L249.173,561.478L248.902,561.656L248.757,561.671L248.576,561.567L248.377,561.373L248.305,561.15L248.703,560.942L249.209,560.201L249.3,559.431L248.757,559.297L248.432,559.401L248.178,559.401L247.907,559.164L247.744,559.519L247.672,559.875L247.744,560.408L247.69,560.571L247.509,560.675L247.039,560.467L246.568,560.112L246.532,559.904L246.641,559.194L246.623,558.825L246.532,558.279L246.478,558.235L246.297,558.235L245.736,558.338L245.176,557.66L244.886,556.94L243.855,556.734L244.651,555.723L245.863,555.576L246.261,556.089L247.599,556.441L247.527,555.898L247.545,555.708L247.726,555.474L247.835,555.445L247.997,555.62L248.251,555.693L248.377,555.854ZM238.953,540.881L239.152,542.458L239.315,542.684L239.822,542.797L240.382,543.603L240.401,543.83L239.731,545.192L239.587,546.174L238.809,546.103L238.465,545.135L237.977,544.198L237.796,543.108L237.525,542.176L238.013,541.641L238.483,541.753L238.501,541.05ZM264.674,568.539L268.708,569.406L269.938,568.873L270.933,568.889L271.222,569.619L270.227,570.365L270.137,570.61L270.282,570.808L271.313,570.93L271.566,571.175L271.801,571.481L271.602,571.956L271.584,572.17L271.693,572.385L272.452,573.091L272.778,573.461L272.941,573.815L272.995,574.432L272.977,574.926L272.814,574.988L272.434,574.833L272.072,574.555L271.747,573.846L271.53,573.692L270.879,573.553L270.245,573.214L269.739,573.23L269.287,573.076L268.871,573.214L268.726,572.968L268.545,572.508L268.545,572.293L268.762,571.557L268.762,571.358L268.636,571.343L268.165,571.496L267.966,571.389L267.442,570.854L267.243,570.747L266.718,570.701L266.411,571.649L266.393,571.894L266.7,572.492L267.297,573.43L266.99,573.445L266.14,573.153L265.904,572.984L265.651,572.508L265.145,572.231L264.964,572.063L264.91,571.864L264.891,571.251L264.783,571.16L264.059,571.328L263.915,571.175L263.86,570.915L263.752,570.777L263.282,570.533L263.245,570.396L263.444,570.213L263.571,569.786L263.752,568.206ZM256.191,560.868L257.313,561.552L258.036,561.552L258.036,561.969L258.127,562.7L258.018,562.998L257.729,563.297L257.566,563.731L257.439,563.806L256.625,563.282L255.775,562.565L255.341,562.7L254.78,562.52L254.328,562.565L254.039,562.968L253.388,563.178L253.261,562.371L252.664,561.612L252.067,561.002L252.393,560.067L252.791,559.919L253.152,559.608L254.618,559.934L255.377,560.215ZM244.416,486.411L244.163,486.717L243.765,486.766L243.168,487.12L243.096,487.426L243.078,487.793L243.494,488.247L243.693,488.774L243.946,489.561L244.127,490.312L244.109,490.546L244.145,490.928L244.452,491.546L244.47,491.818L244.452,492.09L244.326,492.598L244.235,492.66L243.928,492.71L243.91,493.02L243.837,493.119L243.005,493.156L242.589,493.007L242.625,492.09L242.101,491.719L241.739,491.114L241.323,490.065L240.979,489.733L240.581,488.909L239.984,488.198L240.672,487.756L240.563,486.973L240.961,486.705L241.558,486.424L242.01,486.643L242.408,486.57L242.589,486.375L242.535,485.582L242.661,484.949L243.114,484.633L243.584,484.597L243.765,484.949L244,485.29L244.579,485.57L244.561,485.923ZM248.178,489.13L246.948,489.696L246.351,489.511L246.116,489.093L245.99,488.737L245.863,488.148L246.08,487.83L246.514,487.377L246.695,487.083L246.767,486.741L246.731,486.411L246.804,486.106L247.057,485.997L247.961,486.338L248.902,486.863L249.227,487.218L249.282,487.499L248.884,488.136L248.612,488.651ZM237.85,489.918L237.724,490.028L237.561,489.991L237.434,489.77L237.344,489.388L237.525,489.241L237.651,489.241L237.814,489.45L237.886,489.77ZM236.53,533.274L236.403,534.004L235.987,533.935L235.86,533.756L235.788,533.288L235.661,533.067L235.824,532.6L235.951,532.092L235.915,531.694L236.53,531.722L237.271,531.818L237.47,531.927L237.253,532.27L237.036,532.49L236.584,532.614ZM237.525,518.933L237.47,519.543L236.729,520.712L236.096,521.405L235.517,521.953L235.137,521.953L234.829,521.686L235.173,521.245L235.607,520.819L235.463,520.26L235.336,520.087L235.155,520.034L234.848,519.742L234.938,519.304L235.119,519.105L235.372,518.946L235.589,519.039L236.566,518.734L236.873,518.496L237.452,518.443ZM237.488,511.387L237.127,511.478L237.072,511.232L236.747,510.829L237.036,510.557L237.597,510.284L238.031,510.31L238.429,510.531L238.483,510.777L237.796,511.102L237.633,511.284ZM239.713,480.918L239.008,481.039L238.845,480.834L238.845,480.654L238.972,480.509L239.333,480.425L239.568,480.533L239.695,480.714L239.731,480.858ZM244.922,489.425L244.76,489.511L244.615,489.499L244.47,489.253L244.416,488.934L244.09,488.455L244,488.234L244,487.965L244.181,487.573L244.47,487.463L244.651,487.487L244.886,487.94L244.941,488.431L245.013,488.946ZM240.274,538.039L240.256,538.709L240.111,538.919L239.966,538.989L239.605,538.779L239.406,538.765L239.08,539.115L238.791,539.297L238.375,539.255L237.814,539.017L237.326,540.025L237.09,540.375L236.602,540.839L236.548,540.291L236.855,539.45L237,538.891L237.289,538.053L237.85,538.36L238.646,538.053L239.388,537.482L240.003,537.468L240.22,537.789ZM237.778,530.244L236.801,530.873L236.512,530.613L235.806,530.613L235.987,529.93L236.059,529.426L236.168,529.235L236.204,528.799L236.421,528.011L237,528.269L237.434,528.351L238.031,528.609L238.682,528.772L238.863,529.467L238.248,529.78ZM244.036,482.439L244.145,482.79L243.91,482.838L243.566,482.778L243.385,483.056L243.295,483.104L242.481,482.862L242.354,482.753L242.372,482.403L243.24,482.366L243.801,482.137L243.873,482.173ZM242.372,543.334L242.209,543.419L241.667,543.221L241.377,543.051L240.943,542.627L240.889,542.19L240.69,541.655L240.817,541.655L241.269,541.866L241.45,542.021L241.685,542.359L242.408,542.839L242.499,542.981L242.481,543.164ZM241.504,495.633L241.233,495.958L240.744,496.108L240.256,495.858L239.677,495.971L239.623,495.434L239.84,494.985L240.274,494.449L240.599,493.727L240.563,492.722L240.817,492.499L240.961,492.14L241.522,491.917L241.649,492.672L241.504,494.001L241.866,494.798L241.92,495.059L241.848,495.359ZM275.364,577.127L275.183,577.143L274.731,576.972L274.08,576.91L273.99,576.832L273.99,576.708L274.062,576.568L274.424,576.459L275.509,576.552L275.654,576.615L275.69,576.723L275.509,577.019ZM280.899,571.251L280.501,571.634L280.212,571.619L280.103,571.481L280.085,571.297L280.14,571.114L280.266,570.946L280.556,570.732L280.646,570.701L281.08,570.915ZM258.199,568.084L258.434,568.646L258.506,568.737L259.14,568.965L259.411,568.828L260.08,568.767L260.496,568.555L261.075,568.448L261.762,569.817L261.69,570.243L261.147,570.701L260.786,570.793L260.442,570.655L260.478,570.426L260.406,570.228L260.171,569.969L259.953,569.984L259.61,570.182L259.429,570.152L259.085,569.938L258.452,569.786L258.326,569.588L258.326,569.299L258.199,569.162L257.548,568.691L257.132,568.312L256.77,568.251L256.643,568.297L256.517,568.494L256.209,568.661L256.119,568.63L256.01,568.494L255.956,568.282L256.083,567.842L256.282,567.797L257.168,567.887L257.711,568.084ZM276.793,576.118L276.612,576.18L276.486,576.025L276.269,575.901L275.437,575.653L275.419,575.498L275.509,575.281L275.672,575.096L275.997,574.895L276.251,574.401L276.377,574.447L276.486,574.648L276.685,575.328L276.938,575.823L276.902,575.994Z" fill="var(--red)" stroke="var(--red-light)" stroke-width="0.4"/>
+                  <g class="map-city-pins">
+                    <circle cx="259.9" cy="415.5" r="4.2" fill="var(--off-wh)" stroke="var(--red-light)" stroke-width="1.4"/>
+                    <text x="267.9" y="418.5" font-family="var(--mono)" font-size="11" fill="var(--text)">Santiago</text>
+                    <circle cx="255.1" cy="413.1" r="3" fill="var(--off-wh)" stroke="var(--red-light)" stroke-width="1.2"/>
+                    <text x="247.1" y="407.1" font-family="var(--mono)" font-size="9" fill="var(--gray-dk)" text-anchor="end">Valparaíso</text>
+                    <circle cx="247.9" cy="436.2" r="3" fill="var(--off-wh)" stroke="var(--red-light)" stroke-width="1.2"/>
+                    <text x="239.9" y="440.2" font-family="var(--mono)" font-size="9" fill="var(--gray-dk)" text-anchor="end">Concepción</text>
+                    <circle cx="256.9" cy="394.5" r="3" fill="var(--off-wh)" stroke="var(--red-light)" stroke-width="1.2"/>
+                    <text x="264.9" y="397.5" font-family="var(--mono)" font-size="9" fill="var(--gray-dk)">La Serena</text>
+                  </g>
+                </svg>
+                <p class="map-caption">Cobertura real de campañas: <strong>Chile</strong> en el contexto de Latinoamérica.</p>
+                <div class="map-regions">
+                  <span class="map-region-tag">Santiago</span>
+                  <span class="map-region-tag">Valparaíso</span>
+                  <span class="map-region-tag">Concepción</span>
+                  <span class="map-region-tag">La Serena</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:.72rem;color:var(--gray-lt);margin-top:20px;">* Simulación ilustrativa. Nombres, montos y métricas son ficticios y no corresponden a datos reales de clientes.</p>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="desarrollo-web" class="section-webdev js-fade">
+  <div class="webdev-container">
+    <div class="webdev-header">
+      <div class="tag-caps">Desarrollo Web</div>
+      <h2 class="section-title">Sitios que <span class="hl-red">venden</span>.</h2>
+      <p class="body-text sec-text">Diseñamos y construimos el sitio, no solo la campaña que lo lleva tráfico. Misma agencia, un solo equipo, sin traspasos entre proveedores.</p>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-card type-card-red">
+        <div class="type-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Tienda Online</h3>
+        <p>TiendaNube o WooCommerce, con pagos y despacho configurados para vender desde el día uno.</p>
+      </div>
+      <div class="type-card type-card-red">
+        <div class="type-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Sitio Corporativo</h3>
+        <p>Presencia profesional para tu negocio: servicios, contacto y formulario, pensado para convertir visitas en consultas.</p>
+      </div>
+      <div class="type-card type-card-red">
+        <div class="type-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Plataforma a Medida</h3>
+        <p>Portales con base de datos propia — login de clientes, paneles internos, integraciones (como el que usamos nosotros mismos).</p>
+      </div>
+    </div>
+
+    <div class="portfolio-label">Lo que ya construimos</div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <span class="portfolio-badge badge-client">Cliente real</span>
+        <div class="portfolio-title">Planytrip</div>
+        <p class="portfolio-desc">Agencia de turismo. Construimos <strong>planytrip.cl</strong> (tienda online con pagos vía Mercado Pago) y gestionamos sus campañas de Meta Ads en paralelo — mismo equipo, sitio y publicidad alineados.</p>
+        <a href="https://planytrip.cl" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ver sitio →</a>
+      </div>
+    </div>
+    <p class="webdev-note">* El demo de automotoras se suma aquí una vez migrado a un dominio propio de Neomarket.</p>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="work" class="section-video js-fade">
+  <div class="video-container">
+    <div class="video-grid">
+      <div class="video-info">
+        <div class="tag-caps">Neomarket</div>
+        <h2 class="section-title">¿Cómo es trabajar junto a nosotros?</h2>
+        <p class="body-text">No mandamos informes al final del mes y desaparecemos. Operamos como un anexo de tu área comercial — monitoreamos campañas activamente, iteramos creativos y ajustamos presupuestos en tiempo real.</p>
+        <p class="body-text sec-text">Cada peso de tu inversión publicitaria está siendo observado. Si algo no funciona, lo ajustamos antes de que se note en tus resultados. Así trabajamos en Neomarket.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step done">
+          <div class="process-step-marker">1</div>
+          <div class="process-step-body">
+            <span class="process-step-time">Semana 1–2</span>
+            <div class="process-step-card">
+              <div class="process-step-title">Diagnóstico y configuración</div>
+              <p class="process-step-desc">Configuramos tus campañas en Meta Ads Manager y hacemos la primera sesión de contenido. El algoritmo entra en fase de aprendizaje.</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-step done">
+          <div class="process-step-marker">2</div>
+          <div class="process-step-body">
+            <span class="process-step-time">Semana 3–4</span>
+            <div class="process-step-card">
+              <div class="process-step-title">Primeros datos reales</div>
+              <p class="process-step-desc">Llegan los primeros resultados de alcance, clics y consultas. Ajustamos audiencias y creativos según lo que muestran los números.</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-marker">3</div>
+          <div class="process-step-body">
+            <span class="process-step-time">Mes 2</span>
+            <div class="process-step-card">
+              <div class="process-step-title">Optimización activa</div>
+              <p class="process-step-desc">Reducimos el costo por resultado y aumentamos el volumen de consultas y visitas hacia tu negocio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-marker">4</div>
+          <div class="process-step-body">
+            <span class="process-step-time">Mes 3</span>
+            <div class="process-step-card">
+              <div class="process-step-title">Posicionamiento consolidado</div>
+              <p class="process-step-desc">Tu marca queda reconocida digitalmente en tu zona, con una base activa de clientes potenciales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="casos" class="section-cases js-fade">
+  <div class="cases-container">
+    <div class="cases-header">
+      <div class="tag-caps">Resultados</div>
+      <h2 class="section-title">Con quién trabajamos.</h2>
+      <p class="body-text sec-text">Somos una agencia joven — preferimos mostrarte <span class="hl-red">casos reales</span> a medida que se consolidan antes que inventar cifras. Así se ve nuestro trabajo hoy:</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="case-badge badge-live">● Campaña en curso</span>
+        <div class="case-client">Planytrip</div>
+        <div class="case-industry">Agencia de Turismo</div>
+        <p class="case-desc">Gestionamos su estrategia en Meta Ads con dos objetivos en paralelo: mensajes por WhatsApp y compras directas en <span class="hl-red">planytrip.cl</span>. El eje creativo es simple — viajes resueltos por expertos, sin el estrés de organizar todo solo. Con Meta Pixel y GA4 ya trackeando cada conversión, estamos en fase de optimización activa.</p>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-live">Sitio Web</span>
+        <div class="case-client">Planytrip</div>
+        <div class="case-industry">Agencia de Turismo</div>
+        <p class="case-desc">Construimos <span class="hl-red">planytrip.cl</span>, su tienda online con pagos vía Mercado Pago. Es el mismo sitio que recibe el tráfico de las campañas que gestionamos — sitio y publicidad hechos por el mismo equipo, sin traspasos entre proveedores.</p>
+      </div>
+      <div class="case-empty">
+        <span class="case-badge">Próximo caso</span>
+        <p class="case-desc">Trabajamos casos uno a la vez para poder monitorearlos de cerca. Escríbenos y conversemos si tu negocio calza con lo que hacemos.</p>
+        <a href="#contacto" class="btn btn-secondary btn-sm">Escríbenos</a>
+      </div>
+    </div>
+    <p class="cases-note">Actualizamos esta sección con datos verificables a medida que los casos avanzan — sin cifras infladas.</p>
+  </div>
+  <div class="sec-div"></div>
+</section>
+
+<section id="contacto" class="section-contact js-fade">
+  <div class="contact-container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="tag-caps">Hablemos</div>
+        <h2 class="section-title">Llevemos tu negocio al siguiente nivel.</h2>
+        <p class="body-text">Escríbenos directamente o agenda una llamada de diagnóstico. Revisaremos tu estructura de campañas de Meta y tu negocio junto a ti.</p>
+        <div class="contact-details-block">
+          <div class="contact-detail-item">
+            <span class="detail-label">Email Directo</span>
+            <a href="mailto:neomarket.chile@neomarket-chile.com" class="detail-val">neomarket.chile@neomarket-chile.com</a>
+          </div>
+          <div class="contact-detail-item">
+            <span class="detail-label">Sitio Web</span>
+            <span class="detail-val">neomarket-chile.com</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="detail-label">Horario</span>
+            <span class="detail-val">Lunes a Viernes // 09:00 – 20:30</span>
+          </div>
+          <div class="contact-detail-item" style="margin-top:8px;">
+            <a href="https://portal.neomarket-chile.com" target="_blank" class="btn btn-primary btn-sm" style="display:inline-flex;">Portal Cliente →</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-block">
+        <div class="form-card-container">
+          <h3 class="form-title">Iniciar Auditoría</h3>
+          <form id="neomarket-contact-form" class="main-contact-form">
+            <div class="form-group">
+              <input type="text" id="user-name" name="nombre" required placeholder=" "/>
+              <label for="user-name">Tu nombre y apellido</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="user-email" name="correo" required placeholder=" "/>
+              <label for="user-email">Correo electrónico</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="user-company" name="empresa" required placeholder=" "/>
+              <label for="user-company">Sitio web o empresa (Ej. mitienda.cl)</label>
+            </div>
+            <div class="form-group">
+              <textarea id="user-msg" name="mensaje" required placeholder=" " rows="4"></textarea>
+              <label for="user-msg">¿Cuál es tu objetivo o idea?</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit-form" id="submit-btn">
+              Enviar solicitud
+              <span class="btn-spinner" id="form-spinner"></span>
+            </button>
+            <div class="form-feedback" id="form-msg-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="mini-scene">
+            <div class="mini-cube">
+              <div class="mf mfront"><span class="logo-n">N</span></div>
+              <div class="mf mback"><span class="logo-n">N</span></div>
+            </div>
+          </div>
+          <span class="footer-brand-name">NEOMARKET</span>
+        </div>
+        <p class="footer-brand-tag">Estrategias del mundo digital que convierten de verdad.</p>
+      </div>
+      <div class="footer-nav-columns">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#presentacion">Nosotros</a></li>
+            <li><a href="#servicios">Meta Ads</a></li>
+            <li><a href="#work">Cómo trabajamos</a></li>
+            <li><a href="#casos">Casos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes Sociales</h4>
+          <ul>
+            <li><a href="https://instagram.com/neomarket.chile" target="_blank" rel="noopener">Instagram @neomarket.chile</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <p class="copyright">© 2026 NEOMARKET Agencia de Marketing. Todos los derechos reservados.</p>
+      <p class="footer-tagline">Chile · Meta Ads · Performance</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // 1. Logo 3D tilt on hover
+  const logoWrapper = document.querySelector('.showcase-3d-wrapper');
+  const logo3D = document.getElementById('interactive-logo-3d');
+  if (logoWrapper && logo3D) {
+    logoWrapper.addEventListener('mousemove', (e) => {
+      logo3D.style.animation = 'none';
+      const rect = logoWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      logo3D.style.transform = `rotateX(${-y*.25}deg) rotateY(${x*.25}deg)`;
+    });
+    logoWrapper.addEventListener('mouseleave', () => {
+      logo3D.style.transition = 'transform 0.5s ease';
+      logo3D.style.transform = 'rotateX(12deg) rotateY(0deg)';
+      setTimeout(() => {
+        logo3D.style.transition = 'none';
+        logo3D.style.animation = 'rotateLarge 18s linear infinite';
+      }, 500);
+    });
+  }
+
+  // 2. Mobile nav
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+  if (menuToggle && mobileOverlay) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileLinks.forEach(l => l.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }));
+  }
+
+  // 3. Campaign simulator tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panes = document.querySelectorAll('.campaign-pane');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const t = document.getElementById(`pane-${btn.dataset.campaign}`);
+      if (t) t.classList.add('active');
+    });
+  });
+
+  // 4. Leads flow simulation
+  const leadTrigger = document.querySelector('.btn-trigger-flow[data-flow="leads"]');
+  const stepAd = document.getElementById('lead-ad');
+  const stepForm = document.getElementById('lead-form');
+  const stepCrm = document.getElementById('lead-crm');
+  const conn1 = document.getElementById('conn-1');
+  const conn2 = document.getElementById('conn-2');
+  let leadsTimeout = null;
+  function runLeads() {
+    if (leadsTimeout) clearTimeout(leadsTimeout);
+    [stepAd, stepForm, stepCrm].forEach(s => s.classList.remove('active'));
+    [conn1, conn2].forEach(c => c.classList.remove('active'));
+    stepAd.classList.add('active');
+    leadsTimeout = setTimeout(() => {
+      conn1.classList.add('active'); stepForm.classList.add('active');
+      leadsTimeout = setTimeout(() => {
+        conn2.classList.add('active'); stepCrm.classList.add('active');
+      }, 1200);
+    }, 1000);
+  }
+  if (leadTrigger) leadTrigger.addEventListener('click', runLeads);
+
+  // 8. Contact form — EmailJS
+  const form = document.getElementById('neomarket-contact-form');
+  const spinner = document.getElementById('form-spinner');
+  const feedback = document.getElementById('form-msg-feedback');
+  const submitBtn = document.getElementById('submit-btn');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name  = document.getElementById('user-name').value.trim();
+      const email = document.getElementById('user-email').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !emailOk) {
+        feedback.className = 'form-feedback error';
+        feedback.style.display = 'block';
+        feedback.innerText = !name ? 'Por favor ingresa tu nombre.' : 'Ingresa un correo válido.';
+        return;
+      }
+      spinner.style.display = 'inline-block';
+      feedback.className = 'form-feedback';
+      feedback.style.display = 'none';
+      submitBtn.disabled = true;
+
+      const templateParams = {
+        nombre:  name,
+        correo:  email,
+        empresa: document.getElementById('user-company').value.trim(),
+        mensaje: document.getElementById('user-msg').value.trim()
+      };
+
+      emailjs.send('service_7chnrgs', 'template_x0v8kbv', templateParams)
+        .then(() => {
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+          feedback.className = 'form-feedback success';
+          feedback.style.display = 'block';
+          feedback.innerText = '¡Solicitud enviada! Nos pondremos en contacto contigo apenas podamos.';
+          form.reset();
+          setTimeout(() => {
+            feedback.style.opacity = '0';
+            setTimeout(() => {
+              feedback.className = 'form-feedback';
+              feedback.style.display = 'none';
+              feedback.style.opacity = '1';
+            }, 500);
+          }, 6000);
+        })
+        .catch((err) => {
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+          feedback.className = 'form-feedback error';
+          feedback.style.display = 'block';
+          feedback.innerText = 'Hubo un error al enviar. Intenta de nuevo o escríbenos directo.';
+          console.error('EmailJS error:', err);
+        });
+    });
+  }
+
+  // 9. Scroll fade-in
+  const fadeEls = document.querySelectorAll('.js-fade');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, { threshold: .1 });
+  fadeEls.forEach(el => obs.observe(el));
+
+});
+</script>
+</body>
+</html>
